@@ -1,19 +1,13 @@
 package com.example.school_app;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.school_app.databinding.ActivityLoginBinding;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
@@ -61,8 +55,6 @@ public class LoginActivity extends AppCompatActivity {
                     });
         });
 
-        binding.GoToSignUpActivity.setOnClickListener( view -> {
-            startActivity(new Intent(LoginActivity.this, MainActivity.class));
-        });
+        binding.GoToSignUpActivity.setOnClickListener( view -> startActivity(new Intent(LoginActivity.this, MainActivity.class)));
     }
 }

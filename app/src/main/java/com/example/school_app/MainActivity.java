@@ -1,20 +1,17 @@
 package com.example.school_app;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.school_app.databinding.ActivityMainBinding;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -47,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                         progressDialog.cancel();
 
                         firebaseFirestore.collection("User")
-                                .document(FirebaseAuth.getInstance().getUid())
+                                .document(Objects.requireNonNull(FirebaseAuth.getInstance().getUid()))
                                 .set(new UserModel(email));
                     })
                     .addOnFailureListener(e -> {
@@ -59,9 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        binding.GoToLoginActivity.setOnClickListener( view -> {
-            startActivity(new Intent(MainActivity.this, LoginActivity.class));
-        });
+        binding.GoToLoginActivity.setOnClickListener( view -> startActivity(new Intent(MainActivity.this, LoginActivity.class)));
 
     }
 }
