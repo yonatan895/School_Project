@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:orientation="vertical"
+    tools:context=".LoginActivity">
+
+
+    <EditText
+        android:padding="10dp"
+        android:id="@+id/emailAddress"
+        android:background="@drawable/edittext_background"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:hint="Email Address"
+
+        />
+
+    <EditText
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edittext_background"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/password"
+        android:inputType="textPassword"
+        android:hint="Password"
+
+        />
+    <Button
+        android:id="@+id/login"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Login" />
+
+    <TextView
+        android:id="@+id/resetPassword"
+        android:textColor="@color/teal_700"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="Reset Password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <TextView
+        android:id="@+id/GoToSignUpActivity"
+        android:textColor="@color/teal_700"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="Signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
