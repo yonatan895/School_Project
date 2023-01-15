@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.school_app.databinding.ActivityLoginBinding;
 import com.google.firebase.auth.FirebaseAuth;
 
+
+
 public class LoginActivity extends AppCompatActivity {
     ActivityLoginBinding binding;
     FirebaseAuth firebaseAuth;
@@ -32,6 +34,7 @@ public class LoginActivity extends AppCompatActivity {
                     .addOnSuccessListener(authResult -> {
                         progressDialog.cancel();
                         Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(LoginActivity.this, FormActivity.class));
                     })
                     .addOnFailureListener(e -> {
                         progressDialog.cancel();
