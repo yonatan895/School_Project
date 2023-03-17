@@ -6,7 +6,7 @@ Create Homepage after Login(Quick Questionnaire) -> UNDER DEVELOPMENT
 
 Create Course options (Rust, Python, maybe SQL) ->
 
-Creating courses content(Research) ->
+Creating courses content(Research) -> DONE
 
 
 
