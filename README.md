@@ -10,7 +10,7 @@ Designing the UI(Create a Quiz class -> **DONE**, Questions class -> **DONE**, S
 
 Other features (Creating a leaderboard -> **UNDER-DEV**, Creating a graph which displays the accuracy VS number of correct questions -> **UNDER-DEV**, Notification alarm to alert users to get up and learn every 5 hours -> **UNDER-DEV**)
 
-Creating courses content(Research) -> DONE
+Creating courses content(Research) -> **DONE**
 
 
 
