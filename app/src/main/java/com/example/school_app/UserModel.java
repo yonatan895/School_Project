@@ -7,12 +7,15 @@ public class UserModel {
     private int totalCorrectAnswers;
     private double averageAccuracy;
 
+    private int totalQuestions;
 
-    public UserModel(String email, int totalCorrectAnswers, double averageAccuracy)
+
+    public UserModel(String email, int totalCorrectAnswers, double averageAccuracy, int totalQuestions)
     {
         this.email = email;
         this.totalCorrectAnswers = totalCorrectAnswers;
         this.averageAccuracy = averageAccuracy;
+        this.totalQuestions = totalQuestions;
     }
 
     public String getEmail()
@@ -28,14 +31,16 @@ public class UserModel {
         return averageAccuracy;
     }
 
+    public int getTotalQuestions() { return totalQuestions; }
+
     public void setEmail(String email) {
         this.email = email;
     }
 
     public void updateLeaderboard(Quiz quiz, int numCorrectAnswers) {
-        int totalQuestions = quiz.getNumQuestions();
-        double accuracy = (double) numCorrectAnswers / totalQuestions;
-        double totalAccuracy = this.averageAccuracy * this.totalCorrectAnswers;
+        final int totalQuestions = quiz.getNumQuestions();
+        final double accuracy = (double) numCorrectAnswers / totalQuestions;
+        final double totalAccuracy = this.averageAccuracy * this.totalCorrectAnswers;
         this.totalCorrectAnswers += numCorrectAnswers;
         this.averageAccuracy = (totalAccuracy + accuracy) / (this.totalCorrectAnswers);
     }
