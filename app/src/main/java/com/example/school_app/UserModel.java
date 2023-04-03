@@ -9,6 +9,10 @@ public class UserModel {
 
     private int totalQuestions;
 
+    public UserModel() {
+
+    }
+
 
     public UserModel(String email, int totalCorrectAnswers, double averageAccuracy, int totalQuestions)
     {

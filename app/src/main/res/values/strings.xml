@@ -1,7 +1,17 @@
 <resources>
     <string name="app_name">School_app</string>
-    <string name="introduction" >Hello, and welcome to the Java Learning program!
+    <string name="introduction">Hello, and welcome to the Java Learning program!
                                 I am honored that you have decided to choose this app to learn
                                 the interesting features of the Java language.
     </string>
+    <string name="email">Email</string>
+    <string name="_0">0</string>
+    <string name="sign_out">Sign out</string>
+    <string name="view_leaderboard">View Leaderboard</string>
+    <string name="username">Username</string>
+    <string name="average_accuracy">Average Accuracy</string>
+    <string name="view_chart">view chart</string>
+    <string name="leaderboard_button_text">Leaderboard</string>
+    <string name="chart_button_text">Progress chart</string>
+
 </resources>

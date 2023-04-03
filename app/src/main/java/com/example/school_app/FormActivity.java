@@ -7,8 +7,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -17,7 +15,6 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.io.IOException;
 
 
 
@@ -34,6 +31,12 @@ public class FormActivity extends AppCompatActivity {
         setContentView(R.layout.activity_form);
         layout = findViewById(R.id.form);
         signOut = findViewById(R.id.sign_out);
+        Button leaderboardButton = findViewById(R.id.leaderboard);
+        leaderboardButton.setOnClickListener(view -> {
+            Intent intent = new Intent(FormActivity.this, LeaderboardActivity.class);
+            startActivity(intent);
+        });
+
 
 
 
