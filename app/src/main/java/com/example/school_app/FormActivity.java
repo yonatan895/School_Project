@@ -1,55 +1,78 @@
 package com.example.school_app;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.Toast;
-
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
-
-
-
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.drawerlayout.widget.DrawerLayout;
+import android.view.MenuItem;
+import java.util.Objects;
 
 public class FormActivity extends AppCompatActivity {
-    // Layout init
-    ConstraintLayout layout;
-    //Sign out button
-    Button signOut;
 
+    public DrawerLayout drawerLayout;
+    public ActionBarDrawerToggle actionBarDrawerToggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form);
-        layout = findViewById(R.id.form);
-        signOut = findViewById(R.id.sign_out);
-        Button leaderboardButton = findViewById(R.id.leaderboard);
-        leaderboardButton.setOnClickListener(view -> {
-            Intent intent = new Intent(FormActivity.this, LeaderboardActivity.class);
-            startActivity(intent);
-        });
 
 
+        // drawer layout instance to toggle the menu icon to open
+        // drawer and back button to close drawer
+        drawerLayout = findViewById(R.id.my_drawer_layout);
+        actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.nav_open, R.string.nav_close);
 
+        // pass the Open and Close toggle for the drawer layout listener
+        // to toggle the button
+        drawerLayout.addDrawerListener(actionBarDrawerToggle);
+        actionBarDrawerToggle.syncState();
 
-
-
-
-
-        signOut.setOnClickListener(view -> {
-            FirebaseAuth.getInstance().signOut();
-            startActivity(new Intent(FormActivity.this, MainActivity.class));
+        // to make the Navigation drawer icon always appear on the action bar
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        NavigationView navigationView = findViewById(R.id.navigation_view);
+        navigationView.setNavigationItemSelectedListener(item -> {
+            int id = item.getItemId();
+            Context context = getApplicationContext();
+            if (id == R.id.nav_home) {
+                startActivity(new Intent(context, FormActivity.class));
+                return true;
+            } else if (id == R.id.nav_sign_out) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(context, LoginActivity.class));
+                return true;
+            } else if (id == R.id.nav_leaderboard) {
+                startActivity(new Intent(context, LeaderboardActivity.class));
+                return true;
+            }
+            return false;
         });
     }
 
+    // override the onOptionsItemSelected()
+    // function to implement
+    // the item click listener callback
+    // to open and close the navigation
+    // drawer when the icon is clicked
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
+            actionBarDrawerToggle.syncState();
+            return true;
+        }
+
+            return super.onOptionsItemSelected(item);
+        }
 
 
 

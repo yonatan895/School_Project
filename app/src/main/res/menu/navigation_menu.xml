@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="HardcodedText">
+    <group android:checkableBehavior="single">
+    <item
+        android:id="@+id/nav_home"
+        android:title="Home"
+        android:icon="@drawable/ic_home"
+        />
+
+    <item
+        android:id="@+id/nav_sign_out"
+        android:title="Sign out"
+        android:icon="@drawable/ic_sign_out"
+        />
+
+    <item
+        android:id="@+id/nav_leaderboard"
+        android:title="Leaderboard"
+        android:icon="@drawable/ic_leaderboard"
+        />
+
+
+    </group>
+
+</menu>

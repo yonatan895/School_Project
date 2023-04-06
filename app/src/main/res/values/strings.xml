@@ -13,5 +13,7 @@
     <string name="view_chart">view chart</string>
     <string name="leaderboard_button_text">Leaderboard</string>
     <string name="chart_button_text">Progress chart</string>
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
 
 </resources>
