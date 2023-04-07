@@ -15,5 +15,35 @@
     <string name="chart_button_text">Progress chart</string>
     <string name="nav_open">Open</string>
     <string name="nav_close">Close</string>
+    <string name="history_bullet_pt">
+        • Origin\n
+        • About java\n
+        • Advantages over C/C++\n
+        • Java packages\n
+        • Java community process\n
+    </string>
+    <string name="java_eco_pt">
+         • Integrated development environment (IDE)\n
+         • Libraries\n
+
+    </string>
+    <string name="ide_pt">
+         • <a href="https://eclipse.org">Eclipse</a>- Open-source project by the Eclipse foundation\n
+         • <a href="https://netbeans.apache.org">NetBeans</a>- Sun\'s (now Oracle\'s) open-source Java IDE\n
+         • <a href="https://jetbrains.com/idea">Intellij Idea</a>- A commercial IDE with a community edition\n
+    </string>
+    <string name="cover_following"> We\'ll cover the following</string>
+    <string name="history_origin">Java was first developed in the 90\’s by James Gosling. It borrows much of its syntax from C and C++ to be more appealing to existing programmers at the time. Java was owned by Sun Microsystems, which was then acquired by Oracle in 2010.
+</string>
+    <string name="about_java">Java is a statically typed, object-oriented language. <b>Statically typed</b> means every variable and parameter must have a defined type (as opposed to languages like JavaScript, which are dynamically typed). <b>Object-oriented (OO)</b> means that data and functions are grouped into objects, which are usually referred to as methods in OO languages.
+    </string>
+    <string name="adv_over_c">Java code is compiled to byte-code, which runs on a virtual machine (the <b>Java Virtual Machine</b> or JVM). The virtual machine handles garbage collection and allows Java to be compiled and run on any OS or hardware with a JVM.\n
+        \nThis is an advantage over C/C++, which must be compiled directly to machine code and has no automatic garbage collection (the programmer needs to allocate and deallocate memory).
+</string>
+    <string name="java_packages">The standard implementation of Java comes in two different packages: the <b>JRE</b> (Java Runtime Environment) and the <b>JDK</b> (Java Development Kit). The JRE is strictly for running Java as an end-user, while the JDK is for developing Java code. The JDK comes with the <font color="#FF4081">javac</font> command for compiling Java code to byte-code among other things.
+    </string>
+    <string name="java_com_proc">To make Java more open and community-based, Sun Microsystems started the Java community process (JCP), which allows a somewhat democratic evolution of Java and JVM specifications.\n
+\nAlso, Sun relicensed most of its Java technologies under the GNU General Public License in May 2007, resulting in multiple open-source implementations of the JVM. OpenJDK is the current official implementation.
+</string>
 
 </resources>

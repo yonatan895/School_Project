@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="HardCodedText"
+    >
+    <item
+        android:id="@+id/next"
+        android:title="Next"
+        android:icon="@drawable/ic_next"
+        />
+
+    <item
+        android:id="@+id/text_editor"
+        android:title="Text Editor"
+        android:icon="@drawable/ic_text_editor"
+        />
+
+    <item
+        android:id="@+id/previous"
+        android:title="Previous"
+        android:icon="@drawable/ic_previous"
+        />
+
+</menu>

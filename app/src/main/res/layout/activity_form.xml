@@ -12,18 +12,159 @@
     tools:context=".FormActivity"
     tools:ignore="HardcodedText">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:orientation="vertical">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="128dp"
-            android:gravity="center"
-            android:text="Hello World!"
-            android:textSize="18sp" />
-    </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:gravity="center"
+                android:text="Introduction"
+                android:textSize="25sp"
+                android:fontFamily="monospace"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:gravity="top"
+                android:text="History"
+                android:textSize="20sp"
+                android:fontFamily="monospace"
+                android:textStyle="italic"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="monospace"
+                android:gravity="top"
+                android:text="Learn about a brief history of Java"
+                android:textSize="11sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="top"
+                android:text="@string/cover_following"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="top"
+                android:text="@string/history_bullet_pt"
+                android:textSize="11sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="top"
+                android:text="Origin"
+                android:textSize="17sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="top"
+                android:text="@string/history_origin"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="top"
+                android:text="About Java"
+                android:textSize="17sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="top"
+                android:text="@string/about_java"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="top"
+                android:text="Advantages over C/C++"
+                android:textSize="17sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="top"
+                android:text="@string/adv_over_c"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="top"
+                android:text="Java packages"
+                android:textSize="17sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="top"
+                android:text="@string/java_packages"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="top"
+                android:text="Java community process"
+                android:textSize="17sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="top"
+                android:text="@string/java_com_proc"
+                android:textSize="14sp"/>
+
+
+
+
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
 
     <!-- this the navigation view which draws and shows the navigation drawer -->
     <!-- include the menu created in the menu folder -->
@@ -33,5 +174,6 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         app:menu="@menu/navigation_menu" />
+
 
 </androidx.drawerlayout.widget.DrawerLayout>
