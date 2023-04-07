@@ -11,32 +11,21 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Button;
-import android.widget.ImageView;
 
-// Picasso is used in order to retrieve images from the web
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
-import com.squareup.picasso.Picasso;
 
 import java.util.Objects;
 
-public class JavaEcosystemActivity extends AppCompatActivity {
+public class CourseStructureActivity extends AppCompatActivity {
     private ActionBarDrawerToggle actionBarDrawerToggle;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_java_ecosystem);
-        ImageView jdk_image = findViewById(R.id.jdk_image_view);
-        Button next;
-
-
-        Picasso.get()
-                .load("https://techvidvan.com/tutorials/wp-content/uploads/sites/2/2020/03/Built-in-packages-in-java.jpg")
-                .into(jdk_image);
-
-
-        DrawerLayout drawerLayout = findViewById(R.id.eco_drawer_layout);
+        setContentView(R.layout.activity_course_structure);
+        DrawerLayout drawerLayout = findViewById(R.id.structure_drawer_layout);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.nav_open, R.string.nav_close);
 
         // pass the Open and Close toggle for the drawer layout listener
@@ -63,7 +52,11 @@ public class JavaEcosystemActivity extends AppCompatActivity {
             }
             return false;
         });
+        // Temporary, just in order to test the different activities
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) Button next = findViewById(R.id.next_button);
+        next.setOnClickListener(v -> startActivity(new Intent(this, JavaEcosystemActivity.class)));
     }
+
 
     // override the onOptionsItemSelected()
     // function to implement

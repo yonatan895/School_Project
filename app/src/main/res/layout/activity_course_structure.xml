@@ -6,10 +6,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/eco_drawer_layout"
+    android:id="@+id/structure_drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".JavaEcosystemActivity"
+    tools:context=".CourseStructureActivity"
     tools:ignore="HardcodedText">
 
     <ScrollView
@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
                 android:gravity="top"
-                android:text="The Java Ecosystem"
+                android:text="Structure of the Course"
                 android:textSize="20sp"
                 android:fontFamily="monospace"
                 android:textStyle="italic"
@@ -51,7 +51,7 @@
                 android:layout_marginTop="10dp"
                 android:fontFamily="monospace"
                 android:gravity="top"
-                android:text="Learn about the components of the Java ecosystem"
+                android:text="Learn about the overall structure and organization of the course"
                 android:textSize="11sp" />
 
             <TextView
@@ -68,7 +68,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:gravity="top"
-                android:text="@string/java_eco_pt"
+                android:text="@string/struct_pt"
                 android:textSize="11sp"/>
 
             <TextView
@@ -76,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:gravity="top"
-                android:text="Integrated Development Environment (IDE)"
+                android:text="What to expect?"
                 android:textSize="17sp"
                 android:textStyle="bold"/>
 
@@ -85,89 +85,35 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:gravity="top"
-                android:text="@string/eco_ide"
-                android:textSize="14sp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:gravity="top"
-                android:text="@string/ide_pt"
-                android:textSize="11sp"
-                />
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:gravity="top"
-                android:text="Libraries"
-                android:textSize="17sp"
-                android:textStyle="bold"/>
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:gravity="top"
-                android:text="@string/eco_lib"
-                android:textSize="11sp"/>
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:gravity="top"
-                android:text="@string/lib_list"
-                android:textSize="11sp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:gravity="top"
-                android:text="The Java Development Kit"
-                android:textSize="17sp"
-                android:textStyle="bold"/>
-
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:gravity="top"
-                android:text="@string/eco_jdk"
-                android:textSize="14sp"
-                android:textStyle="bold"/>
-
-
-            <ImageView
-                android:id="@+id/jdk_image_view"
-                android:layout_marginTop="15dp"
-                android:layout_width="match_parent"
-                android:gravity="top"
-                android:layout_height="wrap_content"
-                android:contentDescription="Java packages, sub-packages, and classes" />
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:gravity="top"
-                android:text="@string/prim_info"
+                android:text="@string/struct_expect"
                 android:textSize="14sp"/>
 
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="top"
+                android:text="Organization of the course"
+                android:textSize="17sp"
+                android:textStyle="bold"/>
 
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="top"
+                android:text="@string/course_org"
+                android:textSize="11sp"/>
 
-
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="top"
+                android:text="@string/categories"
+                android:textSize="11sp"/>
 
 
 

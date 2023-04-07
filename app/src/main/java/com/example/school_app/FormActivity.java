@@ -62,7 +62,7 @@ public class FormActivity extends AppCompatActivity {
             return false;
         });
         // Temporary, just in order to test the different activities
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) Button next = findViewById(R.id.next_button);
+         Button next = findViewById(R.id.next_button);
         next.setOnClickListener(v -> startActivity(new Intent(this, JavaEcosystemActivity.class)));
     }
 

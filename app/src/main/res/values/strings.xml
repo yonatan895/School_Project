@@ -46,7 +46,7 @@
     <string name="java_com_proc">To make Java more open and community-based, Sun Microsystems started the Java community process (JCP), which allows a somewhat democratic evolution of Java and JVM specifications.\n
 \nAlso, Sun relicensed most of its Java technologies under the GNU General Public License in May 2007, resulting in multiple open-source implementations of the JVM. OpenJDK is the current official implementation.
 </string>
-<string name="eco_ide">The Java ecosystem is huge. It is mainly composed of JVM\’s, libraries, tools, and IDE\’s. The three most popular IDE\’s, in no particular order, are :
+    <string name="eco_ide">The Java ecosystem is huge. It is mainly composed of JVM\’s, libraries, tools, and IDE\’s. The three most popular IDE\’s, in no particular order, are :
 </string>
     <string name="eco_lib">Following are some of the most promising new libraries and tools in the Java ecosystem:
 </string>
@@ -63,5 +63,20 @@
 </string>
     <string name="prim_info">A particular aspect of Java is that there are special types called <b>primitives</b>. Unlike objects, primitives do not have methods and always have a value. In other words, they can never be <font color="#FF4081">null</font>.
 </string>
+    
+    <string name="struct_pt">
+        • What to expect?\n
+        • Organization of the course
+    </string>
+    <string name="struct_expect">This course should help you understand the latest in Java features, up to version 17. </string>
+    <string name="course_org">This is an intermediate-level course designed to introduce you to different Java versions and libraries for software development.\n
+        \n To overview, the course can be divided into two categories:
+</string>
 
+    <string name="categories"><b>Java</b>: From chapter "Introduction to chapter "Java 10-17."\n
+        \t• Java syntax and conventions
+        \t• Java 5-12\n
+        \n <b>Java Ecosystem</b>: From chapter "Java Ecosystem to chapter "Modern Java concurrency"\n
+        \t• Using essential libraries, and using co
+    </string>
 </resources>
