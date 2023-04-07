@@ -6,20 +6,20 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/my_drawer_layout"
+    android:id="@+id/eco_drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FormActivity"
+    tools:context=".JavaEcosystemActivity"
     tools:ignore="HardcodedText">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="top"
-        android:orientation="vertical">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:orientation="vertical">
 
 
 
@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
                 android:gravity="top"
-                android:text="History"
+                android:text="The Java Ecosystem"
                 android:textSize="20sp"
                 android:fontFamily="monospace"
                 android:textStyle="italic"
@@ -51,7 +51,7 @@
                 android:layout_marginTop="10dp"
                 android:fontFamily="monospace"
                 android:gravity="top"
-                android:text="Learn about a brief history of Java"
+                android:text="Learn about the components of the Java ecosystem"
                 android:textSize="11sp" />
 
             <TextView
@@ -68,7 +68,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:gravity="top"
-                android:text="@string/history_bullet_pt"
+                android:text="@string/java_eco_pt"
                 android:textSize="11sp"/>
 
             <TextView
@@ -76,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:gravity="top"
-                android:text="Origin"
+                android:text="Integrated Development Environment (IDE)"
                 android:textSize="17sp"
                 android:textStyle="bold"/>
 
@@ -85,85 +85,83 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:gravity="top"
-                android:text="@string/history_origin"
+                android:text="@string/eco_ide"
                 android:textSize="14sp"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:gravity="top"
-                android:text="About Java"
-                android:textSize="17sp"
-                android:textStyle="bold"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:gravity="top"
-                android:text="@string/about_java"
-                android:textSize="14sp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:gravity="top"
-                android:text="Advantages over C/C++"
-                android:textSize="17sp"
-                android:textStyle="bold"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:gravity="top"
-                android:text="@string/adv_over_c"
-                android:textSize="14sp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:gravity="top"
-                android:text="Java packages"
-                android:textSize="17sp"
-                android:textStyle="bold"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:gravity="top"
-                android:text="@string/java_packages"
-                android:textSize="14sp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:gravity="top"
-                android:text="Java community process"
-                android:textSize="17sp"
-                android:textStyle="bold"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:gravity="top"
-                android:text="@string/java_com_proc"
-                android:textSize="14sp"/>
-
-            <Button
-                android:id="@+id/next_button"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="15dp"
-                android:gravity="top"
-                android:text="Next"
+                android:text="@string/ide_pt"
+                android:textSize="11sp"
                 />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="top"
+                android:text="Libraries"
+                android:textSize="17sp"
+                android:textStyle="bold"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="top"
+                android:text="@string/eco_lib"
+                android:textSize="11sp"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="top"
+                android:text="@string/lib_list"
+                android:textSize="11sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="top"
+                android:text="The Java Development Kit"
+                android:textSize="17sp"
+                android:textStyle="bold"/>
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="top"
+                android:text="@string/eco_jdk"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+
+
+            <ImageView
+                android:id="@+id/jdk_image_view"
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:gravity="top"
+                android:layout_height="wrap_content"
+                android:contentDescription="Java packages, sub-packages, and classes" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="top"
+                android:text="@string/prim_info"
+                android:textSize="14sp"/>
 
 
 

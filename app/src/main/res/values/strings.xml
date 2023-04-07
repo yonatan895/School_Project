@@ -25,6 +25,7 @@
     <string name="java_eco_pt">
          • Integrated development environment (IDE)\n
          • Libraries\n
+         • The Java Development Kit\n
 
     </string>
     <string name="ide_pt">
@@ -44,6 +45,23 @@
     </string>
     <string name="java_com_proc">To make Java more open and community-based, Sun Microsystems started the Java community process (JCP), which allows a somewhat democratic evolution of Java and JVM specifications.\n
 \nAlso, Sun relicensed most of its Java technologies under the GNU General Public License in May 2007, resulting in multiple open-source implementations of the JVM. OpenJDK is the current official implementation.
+</string>
+<string name="eco_ide">The Java ecosystem is huge. It is mainly composed of JVM\’s, libraries, tools, and IDE\’s. The three most popular IDE\’s, in no particular order, are :
+</string>
+    <string name="eco_lib">Following are some of the most promising new libraries and tools in the Java ecosystem:
+</string>
+    <string name="lib_list">
+        • Maven, Gradle, and other build tools\n
+        • Libraries for concurrent programming\n
+        • JUnit, Spock, and other test frameworks\n
+        • Groovy, Scala, and other JVM languages\n
+        • Grails, Play, and other web frameworks\n
+        • JVM Cloud providers\n
+    </string>
+    <string name="eco_jdk">The core class type included in Java is called the JDK. It includes all the basic tools we would need in a modern application, including everything from collection types and queues, to web sockets, to files and image processing. It can be found <a href="https://www.oracle.com/java/technologies/downloads/">here</a>.\n
+        \nAs an object-oriented language, methods and properties are organized into classes that are organized in packages. Each Java class should be defined in one file named for that class. The classes under <font color="#FF4081">java.lang</font>, such as <font color="#FF4081">String</font>, are always available. Otherwise, we would need to explicitly import the classes using an import statement at the top of our Java file. An instance of a class is called an <b>object</b>. All objects are passed by value. Unlike in C, we cannot modify a reference pointer.
+</string>
+    <string name="prim_info">A particular aspect of Java is that there are special types called <b>primitives</b>. Unlike objects, primitives do not have methods and always have a value. In other words, they can never be <font color="#FF4081">null</font>.
 </string>
 
 </resources>

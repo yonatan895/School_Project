@@ -1,9 +1,12 @@
 package com.example.school_app;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -58,7 +61,11 @@ public class FormActivity extends AppCompatActivity {
             }
             return false;
         });
+        // Temporary, just in order to test the different activities
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) Button next = findViewById(R.id.next_button);
+        next.setOnClickListener(v -> startActivity(new Intent(this, JavaEcosystemActivity.class)));
     }
+
 
     // override the onOptionsItemSelected()
     // function to implement
