@@ -15,6 +15,42 @@
         android:theme="@style/Theme.School_app"
         tools:targetApi="31">
         <activity
+            android:name=".StreamsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DefaultsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Java8_vs_Java7Activity"
+            android:exported="false" />
+        <activity
+            android:name=".LambdaExpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".WhatInJava8Activity"
+            android:exported="false" />
+        <activity
+            android:name=".JVMBenefitsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NewIOActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Java7Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Java6Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Java5Activity"
+            android:exported="false" />
+        <activity
+            android:name=".CommentsInJavaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ClassesInJavaActivity"
+            android:exported="false" />
+        <activity
             android:name=".PrimAndArrActivity"
             android:exported="false" />
         <activity
