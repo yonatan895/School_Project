@@ -17,23 +17,21 @@ import java.util.Objects;
 
 public abstract class BaseActivity extends AppCompatActivity {
     private ActionBarDrawerToggle actionBarDrawerToggle;
+    private final Class<?>[] activityList = {IntroActivity.class, JavaEcosystemActivity.class, CourseStructureActivity.class};
 
     protected void setupNavigationDrawer(int resource, Context context) {
         DrawerLayout drawerLayout = findViewById(resource);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.nav_open, R.string.nav_close);
 
-        // pass the Open and Close toggle for the drawer layout listener
-        // to toggle the button
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
 
-        // to make the Navigation drawer icon always appear on the action bar
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         NavigationView navigationView = findViewById(R.id.navigation_view);
         navigationView.setNavigationItemSelectedListener(item -> {
             int id = item.getItemId();
             if (id == R.id.nav_home) {
-                startActivity(new Intent(context, FormActivity.class));
+                startActivity(new Intent(context, IntroActivity.class));
                 return true;
             } else if (id == R.id.nav_sign_out) {
                 FirebaseAuth.getInstance().signOut();
@@ -46,30 +44,38 @@ public abstract class BaseActivity extends AppCompatActivity {
             return false;
         });
     }
+
     protected void setupBottomNavigationMenu(int resource, Context context) {
         BottomNavigationView bottomNavigationView = findViewById(resource);
         bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
             int id = item.getItemId();
             if (id == R.id.previous) {
-                startActivity(new Intent(context, FormActivity.class));
-                return true;
-            } else if (id == R.id.text_editor) {
-                startActivity(new Intent(context, LeaderboardActivity.class));
-                return true;
+                int currentIndex = getCurrentActivityIndex();
+                if (currentIndex > 0) {
+                    startActivity(new Intent(context, activityList[currentIndex - 1]));
+                    return true;
+                }
             } else if (id == R.id.next) {
-                FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(context, LoginActivity.class));
-                return true;
+                int currentIndex = getCurrentActivityIndex();
+                if (currentIndex < activityList.length - 1) {
+                    startActivity(new Intent(context, activityList[currentIndex + 1]));
+                    finish();
+                    return true;
+                }
             }
             return false;
         });
     }
+    private int getCurrentActivityIndex() {
+        Class<?> currentClass = getClass();
+        for (int i = 0; i < activityList.length; i++) {
+            if (activityList[i].equals(currentClass)) {
+                return i;
+            }
+        }
+        return -1;
+    }
 
-    // override the onOptionsItemSelected()
-    // function to implement
-    // the item click listener callback
-    // to open and close the navigation
-    // drawer when the icon is clicked
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (actionBarDrawerToggle.onOptionsItemSelected(item)) {

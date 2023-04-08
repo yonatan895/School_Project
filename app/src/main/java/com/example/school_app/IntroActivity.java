@@ -14,7 +14,7 @@ import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 
-public class FormActivity extends BaseActivity {
+public class IntroActivity extends BaseActivity {
 
 
     @Override

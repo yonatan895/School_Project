@@ -64,7 +64,7 @@ public class LeaderboardActivity extends AppCompatActivity {
             int id = item.getItemId();
             Context context = getApplicationContext();
             if (id == R.id.nav_home) {
-                startActivity(new Intent(context, FormActivity.class));
+                startActivity(new Intent(context, IntroActivity.class));
                 return true;
             } else if (id == R.id.nav_sign_out) {
                 FirebaseAuth.getInstance().signOut();
