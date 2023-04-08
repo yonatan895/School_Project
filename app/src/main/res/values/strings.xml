@@ -63,7 +63,7 @@
 </string>
     <string name="prim_info">A particular aspect of Java is that there are special types called <b>primitives</b>. Unlike objects, primitives do not have methods and always have a value. In other words, they can never be <font color="#FF4081">null</font>.
 </string>
-    
+
     <string name="struct_pt">
         • What to expect?\n
         • Organization of the course
