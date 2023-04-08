@@ -1,26 +1,35 @@
 package com.example.school_app;
 
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import androidx.annotation.NonNull;
+
+import android.os.Bundle;
+
 import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import java.util.ArrayList;
 import java.util.List;
+
 import java.util.Objects;
 
 public class LeaderboardActivity extends AppCompatActivity {
+
+
+public class LeaderboardActivity extends BaseActivity {
+
 
   private ActionBarDrawerToggle actionBarDrawerToggle;
   private LeaderboardAdapter adapter;
@@ -53,6 +62,7 @@ public class LeaderboardActivity extends AppCompatActivity {
               }
               adapter.setUsersList(usersList);
             });
+
     DrawerLayout drawerLayout = findViewById(R.id.leaderboard_drawer_layout);
     actionBarDrawerToggle =
         new ActionBarDrawerToggle(this, drawerLayout, R.string.nav_open, R.string.nav_close);
@@ -93,5 +103,8 @@ public class LeaderboardActivity extends AppCompatActivity {
     }
 
     return super.onOptionsItemSelected(item);
+
+    setupNavigationDrawer(R.id.leaderboard_drawer_layout, getApplicationContext());
+
   }
 }

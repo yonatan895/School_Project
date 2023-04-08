@@ -64,10 +64,32 @@ public abstract class BaseActivity extends AppCompatActivity {
               finish();
               return true;
             }
+
+          } else if (id == R.id.text_editor) {
+            startActivity(new Intent(context, TextEditorActivity.class));
+            return true;
           }
           return false;
         });
   }
+
+  private int getCurrentActivityIndex() {
+    Class<?> currentClass = getClass();
+    for (int i = 0; i < activityList.length; i++) {
+      if (activityList[i].equals(currentClass)) {
+        return i;
+      }
+    }
+    return -1;
+  }
+
+  @Override
+  public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+    if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
+      actionBarDrawerToggle.syncState();
+      return true;
+    }
+
 
   private int getCurrentActivityIndex() {
     Class<?> currentClass = getClass();
