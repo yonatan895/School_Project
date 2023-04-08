@@ -83,7 +83,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     return -1;
   }
 
-
   private int getCurrentActivityIndex() {
     Class<?> currentClass = getClass();
     for (int i = 0; i < activityList.length; i++) {
