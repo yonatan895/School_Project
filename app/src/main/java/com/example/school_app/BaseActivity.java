@@ -83,13 +83,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     return -1;
   }
 
-  @Override
-  public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-    if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
-      actionBarDrawerToggle.syncState();
-      return true;
-    }
-
 
   private int getCurrentActivityIndex() {
     Class<?> currentClass = getClass();
