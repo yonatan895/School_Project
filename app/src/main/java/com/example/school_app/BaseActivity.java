@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.view.MenuItem;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -40,6 +41,24 @@ public abstract class BaseActivity extends AppCompatActivity {
                 return true;
             } else if (id == R.id.nav_leaderboard) {
                 startActivity(new Intent(context, LeaderboardActivity.class));
+                return true;
+            }
+            return false;
+        });
+    }
+    protected void setupBottomNavigationMenu(int resource, Context context) {
+        BottomNavigationView bottomNavigationView = findViewById(resource);
+        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+            int id = item.getItemId();
+            if (id == R.id.previous) {
+                startActivity(new Intent(context, FormActivity.class));
+                return true;
+            } else if (id == R.id.text_editor) {
+                startActivity(new Intent(context, LeaderboardActivity.class));
+                return true;
+            } else if (id == R.id.next) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(context, LoginActivity.class));
                 return true;
             }
             return false;

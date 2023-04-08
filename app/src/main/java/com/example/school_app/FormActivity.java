@@ -1,26 +1,18 @@
 package com.example.school_app;
 
-import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
+
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.Toast;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationView;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.drawerlayout.widget.DrawerLayout;
-import android.view.MenuItem;
-import java.util.Objects;
+
 
 public class FormActivity extends BaseActivity {
 
@@ -30,6 +22,7 @@ public class FormActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form);
         setupNavigationDrawer(R.id.my_drawer_layout, getApplicationContext());
+        setupBottomNavigationMenu(R.id.bottom_navigation, getApplicationContext());
 
     }
 
