@@ -77,7 +77,39 @@
         \t• Java syntax and conventions
         \t• Java 5-12\n
         \n <b>Java Ecosystem</b>: From chapter "Java Ecosystem to chapter "Modern Java concurrency"\n
-        \t• Using essential libraries, and using co
+        \t• Using essential libraries, and using concurrency
     </string>
+    <string name="prim_cover_pt">
+        • Primitives\n
+        • Arrays\n
+    </string>
+    <string name="prim_types">Java has eight primitive types:\n
+        \n
+        • <font color="#FF4081">byte</font>: A number from -128 to 127 (8 bits). This is typically a way to store or transmit raw data.\n
+        • <font color="#FF4081">short</font>: A 16-bit signed integer. It has a maximum value of around 32,000, precisely 32,767.\n
+        • <font color="#FF4081">int</font>: A 32-bit signed integer. Its maximum is around 2^31\n
+        • <font color="#FF4081">long</font>: A 64-bit signed integer. It has a maximum of 2^63\n
+        • <font color="#FF4081">float</font>: A 32-bit floating point number. This is a non-precise value that is used for things like simulations.\n
+        • <font color="#FF4081">double</font>:  It’s like a float but with 64-bits.\n
+        • <font color="#FF4081">boolean</font>: It has only two possible values: true and false (much like a bit).\n
+        • <font color="#FF4081">char</font>: A single character, such as “A” (the letter A).\n
+        \n
+        These are the only types that can be declared as <font color="#FF4081">var</font>. Other types must be explicitly declared. For example, <font color="#FF4081">var x = new ArrayList&lt;String&gt;()</font> is illegal, but <font color="#FF4081">var x = new ArrayList&lt;String&gt;()</font> is legal.
+    </string>
+    <string name="arr_desc">In Java, we can define arrays of primitives or classes. For example, <font color="#FF4081">String[] strArray = {"a", "b", "c"};</font> creates an array of three <font color="#FF4081">Strings</font>. Once we define an array, we cannot directly change its length. If we need a list of expanding size, we can instead use <font color="#FF4081">java.util.ArrayList</font>.
+</string>
+    <string name="arr_demo">"public class main {
+  public static void main(String[] args) {
+    String[] strArray = {"a", "b", "c"}; //declaring an array
+    for (String element: strArray) {
+        System.out.println(element); //printing it element wise
+    }
+  }
+}
+"</string>
+
+    <string name="arr_example">In this program, we declare an array <font color="#FF4081">strArrray</font> with strings <font color="#FF4081">"a", "b"</font>, and <font color="#FF4081">"c"</font>. The <font color="#FF4081">for</font> loop is used to print the elements one-by-one. We can also print the whole array with the <font color="#FF4081">System.out.println(Arrays.toString(array))</font> command.
+</string>
+
 
 </resources>

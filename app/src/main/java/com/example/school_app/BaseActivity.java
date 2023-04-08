@@ -12,12 +12,15 @@ import android.view.MenuItem;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.pddstudio.highlightjs.HighlightJsView;
+import com.pddstudio.highlightjs.models.Language;
+import com.pddstudio.highlightjs.models.Theme;
 
 import java.util.Objects;
 
 public abstract class BaseActivity extends AppCompatActivity {
-    private ActionBarDrawerToggle actionBarDrawerToggle;
-    private final Class<?>[] activityList = {IntroActivity.class, JavaEcosystemActivity.class, CourseStructureActivity.class};
+    ActionBarDrawerToggle actionBarDrawerToggle;
+    private final Class<?>[] activityList = {IntroActivity.class, JavaEcosystemActivity.class, CourseStructureActivity.class, PrimAndArrActivity.class};
 
     protected void setupNavigationDrawer(int resource, Context context) {
         DrawerLayout drawerLayout = findViewById(resource);
@@ -68,6 +71,12 @@ public abstract class BaseActivity extends AppCompatActivity {
             }
             return false;
         });
+    }
+    protected void highlightText(int resource, String text) {
+        HighlightJsView highlightJsView = findViewById(resource);
+        highlightJsView.setTheme(Theme.ANDROID_STUDIO);
+        highlightJsView.setHighlightLanguage(Language.JAVA);
+        highlightJsView.setSource(text);
     }
     private int getCurrentActivityIndex() {
         Class<?> currentClass = getClass();
