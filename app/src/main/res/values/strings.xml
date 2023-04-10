@@ -111,5 +111,116 @@
     <string name="arr_example">In this program, we declare an array <font color="#FF4081">strArrray</font> with strings <font color="#FF4081">"a", "b"</font>, and <font color="#FF4081">"c"</font>. The <font color="#FF4081">for</font> loop is used to print the elements one-by-one. We can also print the whole array with the <font color="#FF4081">System.out.println(Arrays.toString(array))</font> command.
 </string>
 
+    <string name="class_pt">
+        • Defining a Java class
+        • Properties and methods
+    </string>
+
+    <string name="class_def">To define a new class, create a new file named <font color="#FF4081">Classname.java</font>. For example, to create a <font color="#FF4081">Dragon</font> class, we will first create a file named <font color="#FF4081">Dragon.java</font>, as shown in the following code:
+</string>
+
+    <string name="class_demo">import java.util.*;\n
+public class Dragon{\n
+    // class variables\n
+
+    public static void main(String[] args) {\n
+        // driver code\n
+    }\n
+
+
+}
+</string>
+<string name="class_explain">
+In this case, the class does not have a package. If it did, we would have declared it in the first line and stored the file in the same directory structure of the package.\n
+        \nThe first line above imports everything in the <font color="#FF4081">java.util package</font>. This includes <font color="#FF4081">List, ArrayList, Map</font>, and <font color="#FF4081">HashMap</font> example. Then, we declare a “<font color="#FF4081">Dragon</font>” class. The above code will output “<font color="#FF4081">Succeeded</font>” since there are no functions for the driver code to print anything else.
+</string>
+
+    <string name="class_next">Next, we might want to add some properties and methods to our class. A <b>property</b> is a value associated with a particular object. A <b>method</b> is a block of code in a class.
+</string>
+
+    <string name="class_small_code">
+        public class SmallClass {\n
+    String name; \n
+    String getname() {return name;}\n
+    void print() {System.out.println(name);}\n
+
+
+    public static void main(String[] args) {\n
+        SmallClass c = new SmallClass();\n
+        c.name = "Henry";\n
+        System.out.println(c.getname());\n
+        c.print();\n
+    }\n
+}
+    </string>
+
+    <string name="class_above">In the above code, <font name="#FF4081">name</font> is a <font color="#FF4081">String property</font>, and <font color="#FF4081">getName</font> and print are methods. The method getName returns a String (the name) and <font color="#FF4081">print</font> uses the built-in <font color="#FF4081">System</font> class to print out the name to the standard output stream.\n
+Let’s make a simple class below!
+</string>
+
+        <string name="class_exercise">
+            public class Dragon {\n
+        // class variables\n
+        String name;\n
+        int age;\n
+        String color;\n
+        String type;\n
+        String getname() {return name;}\n
+        void print() {System.out.println(name);}\n
+        void printAll() {System.out.println(name + " " + age + " " + color + " " + type);}\n
+
+        public static void main(String[] args) {\n
+            // driver code\n
+            Dragon d = new Dragon();\n
+            d.name = "Henry";\n
+            d.age = 10;\n
+            d.color = "red";\n
+            d.type = "fire";\n
+            System.out.println(d.getname());\n
+            d.print();\n
+            d.printAll();\n
+        }\n
+    }
+        </string>
+
+        <string name="class_exercise_explain">In this exercise, we create a class called <font color="#FF4081">Dragon</font> with four properties: <font color="#FF4081">name, age, color, type</font>. We also create three methods: <font color="#FF4081">getName</font>, <font color="#FF4081">print</font>, and <font color="#FF4081">printAll</font>. The <font color="#FF4081">printAll</font> method prints out all the properties of the dragon. The driver code creates a new dragon and sets its properties. Then, it prints out the name, prints out the name, and prints out all the properties.
+
+        </string>
+    <string name="comment_explain">As a human, it is sometimes useful for us to leave notes in our source code for other humans and even for ourselves. We call these notes <b>comments</b>, and we write them in the following manner:
+</string>
+
+    <string name="comment_demo">
+        // This is a single-line comment\n
+        /* This is a multi-line comment */\n
+        /** This is a JavaDoc comment */\n
+    </string>
+
+    <string name="comment_explain2">The first two types of comments are used to comment out a single line or multiple lines of code. The third type of comment is used to document a class or method.</string>
+
+    <string name="java5_pt">
+       • Generics
+        • Annotations
+        • More concise for loops
+        • Static Import
+        • Autoboxing, Enums, and Varargs
+
+    </string>
+
+    <string name="generics"><b>Generics</b> were a huge addition to the language. Although it improved the type-safety of Java, it also increased the complexity of the language.\n
+\nGenerics are most commonly used to specify what type a Collection holds. This reduces the need for casting and improves type safety. For example, we can declare a list of strings in the following manner:
+</string>
+
+    <string name="map_long">Declaring a map of <font color="#FF4081">long</font> to <font color="#FF4081">String</font> would appear like the following:
+</string>
+
+    <string name="generic_explain">The generic type needs to be repeated twice in the declaration, which receives a lot of criticism. However, various libraries such as Google’s guava make this less painful by using static methods. For example, declaring the above map would be as simple as the following:
+</string>
+    
+    <string name="anno_explain">Java <b>annotations</b> allow us to add meta-information to Java code that can be used by the compiler, various APIs, or even by our own code at runtime.\n
+        \nThe most common annotation we will see is the <font color="#FF4081">@Override</font> annotation, which declares that we are overriding a method to the compiler. For example, this is useful because it will cause a compile-time error if we mistype the method name.\n
+        \nOther useful annotations are those in <font color="#FF4081">javax.annotation</font> such as <font color="#FF4081">@Nonnull</font> and <font color="#FF4081">@Nonnegative</font>, which declare our intentions.\n
+        \nTo reduce “wiring” code, annotations such as <font color="#FF4081">@Autowired</font> and <font color="#FF4081">@Inject</font> are used by direct-injection frameworks like Spring and Google Guice, respectively.
+</string>
+
 
 </resources>

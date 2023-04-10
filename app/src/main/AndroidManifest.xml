@@ -15,6 +15,63 @@
         android:theme="@style/Theme.School_app"
         tools:targetApi="31">
         <activity
+            android:name=".JShellActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GroovyGparsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".STMActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FuturesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ConcurrentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GuavaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HibernateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LogbackActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Java12FeatureActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LocalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ModularityActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BackportsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FunctionalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FeaturesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GroupingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CollectorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PeekActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ParallerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ForEachActivity"
+            android:exported="false" />
+        <activity
             android:name=".StreamsActivity"
             android:exported="false" />
         <activity
