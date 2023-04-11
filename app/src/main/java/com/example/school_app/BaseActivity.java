@@ -88,6 +88,11 @@ public abstract class BaseActivity extends AppCompatActivity {
         return -1;
     }
 
+    public String compileUserCode(String code) throws Exception {
+        //return DynamicCompiler.compile(code);
+        return "Hello";
+    }
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (actionBarDrawerToggle.onOptionsItemSelected(item)) {

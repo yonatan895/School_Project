@@ -3,6 +3,7 @@ package com.example.school_app;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -21,6 +22,8 @@ public class IntroActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro);
+        Intent intent = new Intent(this, BreakReminderService.class);
+        startService(intent);
         setupNavigationDrawer(R.id.my_drawer_layout, getApplicationContext());
         setupBottomNavigationMenu(R.id.bottom_navigation, getApplicationContext());
 
