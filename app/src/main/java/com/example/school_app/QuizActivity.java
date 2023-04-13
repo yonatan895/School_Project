@@ -1,5 +1,7 @@
 package com.example.school_app;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -9,28 +11,33 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.gson.Gson;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
+
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Objects;
 
 public abstract class QuizActivity extends AppCompatActivity {
 
+
+    private int correctAnswers = 0;
+
     private TextView mQuestionTextView;
     private RadioGroup mAnswersRadioGroup;
 
-    private final ArrayList<Question> mQuestionsList = new ArrayList<>();
+    private ArrayList<Question> mQuestionsList = new ArrayList<>();
     private int mCurrentQuestionIndex = 0;
 
 
@@ -46,7 +53,7 @@ public abstract class QuizActivity extends AppCompatActivity {
 
 
         // Load questions
-        setQuestionsList(getCollectionName());
+        loadQuiz(getCollectionName());
 
         // Set submit button click listener
         mSubmitButton.setOnClickListener(view -> onAnswerSelected());
@@ -54,41 +61,28 @@ public abstract class QuizActivity extends AppCompatActivity {
 
     }
 
-    /*
-    private void loadQuestions() {
-        mFirestore.collection(getCollectionName())
-                .get()
-                .addOnCompleteListener(task -> {
-                    if (task.isSuccessful() && task.getResult() != null) {
-                        for (DocumentSnapshot document : task.getResult()) {
-                            Question question = document.toObject(Question.class);
-                            mQuestionsList.add(question);
-                        }
-                        displayCurrentQuestion();
-                    }
-                });
-    }
-    */
-
-    private void displayCurrentQuestion() {
+    protected void displayCurrentQuestion() {
+        mQuestionsList = new ArrayList<>(mQuestionsList.subList(0, 6));
         // Get current question
         Question currentQuestion = mQuestionsList.get(mCurrentQuestionIndex);
 
+
         // Set question text
-        mQuestionTextView.setText(currentQuestion.getQuestionText());
+        mQuestionTextView.setText(currentQuestion.getQuestion());
 
         // Clear radio group
         mAnswersRadioGroup.removeAllViews();
 
         // Add answer options
-        for (Answer answerOption : currentQuestion.getOptions()) {
+        for (Answer answerOption : currentQuestion.getAnswers()) {
             RadioButton radioButton = new RadioButton(this);
-            radioButton.setText(answerOption.getAnswerText());
+            Log.d("QuizActivity", "displayCurrentAnswer: " + radioButton.getText());
+            radioButton.setText(answerOption.getText());
             mAnswersRadioGroup.addView(radioButton);
         }
     }
 
-    private void onAnswerSelected() {
+    void onAnswerSelected() {
         // Get selected answer
         int selectedAnswerIndex = mAnswersRadioGroup.getCheckedRadioButtonId();
 
@@ -108,81 +102,50 @@ public abstract class QuizActivity extends AppCompatActivity {
         }
     }
     private boolean isCorrectAnswer(Question question, int selectedAnswerIndex) {
-        Answer selectedAnswer = question.getOptions().get(selectedAnswerIndex);
+        Answer selectedAnswer = question.getAnswers().get(selectedAnswerIndex);
         return selectedAnswer.isCorrect();
     }
 
     // Load JSON file containing questions and answers for the quiz
 
-    private JSONObject loadJsonFromAsset() {
-        String json;
+    protected void setQuestionsList(String collectionName) throws IOException {
         try {
-            // Json file is located inside the assets folder
+            Gson gson = new Gson();
             InputStream is = getAssets().open("quizzes.json");
+            InputStreamReader isr = new InputStreamReader(is, StandardCharsets.UTF_8);
+            QuizCollection quizzes = gson.fromJson(isr, QuizCollection.class);
+            assert quizzes != null;
 
-            // Set the size of the buffer to the size of the JSON file, and read the buffer
-            int size = is.available();
-            byte[] buffer = new byte[size];
-            is.read(buffer);
-            is.close();
-
-            // Convert the buffer to a string
-            json = new String(buffer, StandardCharsets.UTF_8);
-
-        // Catch any errors
-        } catch (IOException ex) {
-            ex.printStackTrace();
-            return null;
-        }
-        try {
-            return new JSONObject(json);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        return null;
-
-
-    } // Try setting the questions list from the JSON file
-    protected void setQuestionsList(String collectionName) {
-        JSONObject jsonObject = loadJsonFromAsset();
-        JSONObject quiz = null;
-        try {
-            assert jsonObject != null;
-            JSONArray quizArray = jsonObject.getJSONArray("quizzes");
-            for (int i = 0; i < quizArray.length(); i++) {
-                JSONObject quizObject = quizArray.getJSONObject(i);
-                if (quizObject.getString("name").equals(collectionName)) {
-                    quiz = quizObject;
+            for (Quiz quiz : quizzes.getQuizzes()) {
+                if (quiz.getName().equals(collectionName)) {
+                    mQuestionsList.addAll(quiz.getQuestions());
                     break;
                 }
             }
-
-            // Loop through the questions and add them to the questions list
-            assert quiz != null;
-            JSONArray questionArray = quiz.getJSONArray("questions");
-            for (int i = 0; i < questionArray.length(); i++) {
-
-                // Parse the question and answers from the JSON file
-                JSONObject questionObject = questionArray.getJSONObject(i);
-                String questionText = questionObject.getString("question");
-                JSONArray optionsArray = questionObject.getJSONArray("answers");
-                ArrayList<Answer> options = new ArrayList<>();
-                for (int j = 0; j < optionsArray.length(); j++) {
-                    JSONObject answerObject = optionsArray.getJSONObject(j);
-                    String answerText = answerObject.getString("text");
-                    boolean isCorrect = answerObject.getBoolean("correct");
-                    options.add(new Answer(answerText, isCorrect));
-                }
-                // Add the question to the questions list
-                mQuestionsList.add(new Question(questionText, options));
-            }
-        } catch (JSONException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         displayCurrentQuestion();
-
     }
 
+    void loadQuiz(String collectionName) {
+        try {
+            InputStream is = getAssets().open("quizzes.json");
+            BufferedReader reader = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8));
+
+            QuizCollection quizzes = new Gson().fromJson(reader, QuizCollection.class);
+            mQuestionsList.addAll(quizzes.getQuizzes().get(0).getQuestions());
+            for(int i = 0; i < mQuestionsList.size(); i++) {
+                Log.d("QuizActivity", "loadQuiz: " + mQuestionsList.get(i).getQuestion());
+            }
+
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        displayCurrentQuestion();
+    }
 
 
     private void updateScore(boolean isAnswerCorrect) {
@@ -191,6 +154,7 @@ public abstract class QuizActivity extends AppCompatActivity {
         if (user != null) {
             DocumentReference docRef = db.collection("User").document(user.getUid());
             if (isAnswerCorrect) {
+                correctAnswers++;
                 docRef.update("totalCorrectAnswers", FieldValue.increment(1));
                 docRef.update("totalQuestions", FieldValue.increment(1));
             } else {
@@ -207,8 +171,15 @@ public abstract class QuizActivity extends AppCompatActivity {
             }
         }
 
-
-    protected abstract void finishQuiz();
+// Start the finished quiz activity
+    protected  void finishQuiz() {
+        Intent intent = new Intent(this, FinishedQuizActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putInt("correctAnswers", correctAnswers);
+        bundle.putInt("totalQuestions", mQuestionsList.size());
+        intent.putExtra("quizResults", bundle);
+        startActivity(intent);
+    }
 
     protected abstract String getCollectionName();
 

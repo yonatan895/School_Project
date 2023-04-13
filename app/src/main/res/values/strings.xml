@@ -221,6 +221,7 @@ Let’s make a simple class below!
         \nOther useful annotations are those in <font color="#FF4081">javax.annotation</font> such as <font color="#FF4081">@Nonnull</font> and <font color="#FF4081">@Nonnegative</font>, which declare our intentions.\n
         \nTo reduce “wiring” code, annotations such as <font color="#FF4081">@Autowired</font> and <font color="#FF4081">@Inject</font> are used by direct-injection frameworks like Spring and Google Guice, respectively.
 </string>
+    <string name="total_questions">"Total Questions: "</string>
 
 
 </resources>
