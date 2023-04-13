@@ -1,6 +1,5 @@
 package com.example.school_app;
 
-
 import android.os.Bundle;
 
 public class IntroQuizActivity extends BaseActivity {
