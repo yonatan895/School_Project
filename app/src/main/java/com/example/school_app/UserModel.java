@@ -5,7 +5,6 @@ package com.example.school_app;
 public class UserModel {
     private String email;
     private int totalCorrectAnswers;
-    private double averageAccuracy;
 
     private int totalQuestions;
 
@@ -14,11 +13,10 @@ public class UserModel {
     }
 
 
-    public UserModel(String email, int totalCorrectAnswers, double averageAccuracy, int totalQuestions)
+    public UserModel(String email, int totalCorrectAnswers, int totalQuestions)
     {
         this.email = email;
         this.totalCorrectAnswers = totalCorrectAnswers;
-        this.averageAccuracy = averageAccuracy;
         this.totalQuestions = totalQuestions;
     }
 
@@ -32,7 +30,8 @@ public class UserModel {
     }
 
     public double getAccuracy() {
-        return averageAccuracy;
+        if(totalQuestions == 0) return 0;
+        return (totalCorrectAnswers*100 / totalQuestions);
     }
 
     public int getTotalQuestions() { return totalQuestions; }
@@ -41,11 +40,11 @@ public class UserModel {
         this.email = email;
     }
 
-    public void updateLeaderboard(Quiz quiz, int numCorrectAnswers) {
+     /*public void updateLeaderboard(Quiz quiz, int numCorrectAnswers) {
         final int totalQuestions = quiz.getNumQuestions();
         final double accuracy = (double) numCorrectAnswers / totalQuestions;
         final double totalAccuracy = this.averageAccuracy * this.totalCorrectAnswers;
         this.totalCorrectAnswers += numCorrectAnswers;
         this.averageAccuracy = (totalAccuracy + accuracy) / (this.totalCorrectAnswers);
-    }
+    }*/
 }

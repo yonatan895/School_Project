@@ -130,7 +130,7 @@ public class Dragon{\n
 
 }
 </string>
-<string name="class_explain">
+    <string name="class_explain">
 In this case, the class does not have a package. If it did, we would have declared it in the first line and stored the file in the same directory structure of the package.\n
         \nThe first line above imports everything in the <font color="#FF4081">java.util package</font>. This includes <font color="#FF4081">List, ArrayList, Map</font>, and <font color="#FF4081">HashMap</font> example. Then, we declare a “<font color="#FF4081">Dragon</font>” class. The above code will output “<font color="#FF4081">Succeeded</font>” since there are no functions for the driver code to print anything else.
 </string>
@@ -158,7 +158,7 @@ In this case, the class does not have a package. If it did, we would have declar
 Let’s make a simple class below!
 </string>
 
-        <string name="class_exercise">
+    <string name="class_exercise">
             public class Dragon {\n
         // class variables\n
         String name;\n
@@ -183,7 +183,7 @@ Let’s make a simple class below!
     }
         </string>
 
-        <string name="class_exercise_explain">In this exercise, we create a class called <font color="#FF4081">Dragon</font> with four properties: <font color="#FF4081">name, age, color, type</font>. We also create three methods: <font color="#FF4081">getName</font>, <font color="#FF4081">print</font>, and <font color="#FF4081">printAll</font>. The <font color="#FF4081">printAll</font> method prints out all the properties of the dragon. The driver code creates a new dragon and sets its properties. Then, it prints out the name, prints out the name, and prints out all the properties.
+    <string name="class_exercise_explain">In this exercise, we create a class called <font color="#FF4081">Dragon</font> with four properties: <font color="#FF4081">name, age, color, type</font>. We also create three methods: <font color="#FF4081">getName</font>, <font color="#FF4081">print</font>, and <font color="#FF4081">printAll</font>. The <font color="#FF4081">printAll</font> method prints out all the properties of the dragon. The driver code creates a new dragon and sets its properties. Then, it prints out the name, prints out the name, and prints out all the properties.
 
         </string>
     <string name="comment_explain">As a human, it is sometimes useful for us to leave notes in our source code for other humans and even for ourselves. We call these notes <b>comments</b>, and we write them in the following manner:
@@ -215,7 +215,7 @@ Let’s make a simple class below!
 
     <string name="generic_explain">The generic type needs to be repeated twice in the declaration, which receives a lot of criticism. However, various libraries such as Google’s guava make this less painful by using static methods. For example, declaring the above map would be as simple as the following:
 </string>
-    
+
     <string name="anno_explain">Java <b>annotations</b> allow us to add meta-information to Java code that can be used by the compiler, various APIs, or even by our own code at runtime.\n
         \nThe most common annotation we will see is the <font color="#FF4081">@Override</font> annotation, which declares that we are overriding a method to the compiler. For example, this is useful because it will cause a compile-time error if we mistype the method name.\n
         \nOther useful annotations are those in <font color="#FF4081">javax.annotation</font> such as <font color="#FF4081">@Nonnull</font> and <font color="#FF4081">@Nonnegative</font>, which declare our intentions.\n

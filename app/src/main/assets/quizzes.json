@@ -1,0 +1,70 @@
+{
+  "quizzes": [
+    {
+      "name": "Introduction",
+      "questions": [
+        {
+          "question": "Who is known as the inventor of Java?",
+          "answers": [
+            {"text":"James Gosling", "correct":  true},
+            {"text":  "Dennis Ritchie", "correct":  false},
+            {"text":  "Bjarne Stroustrup", "correct": false},
+            {"text":  "Guido van Rossum", "correct": false}
+          ]
+        },
+        {
+          "question": "What does the JVM stand for?",
+          "answers": [
+            {"text" : "Java Virtual Machine", "correct" :  true},
+            {"text" : "Java Virtual Memory", "correct" :  false},
+            {"text" : "Java Variable Memory", "correct" :  false},
+            {"text" : "Java Virtual Method", "correct" :  false}
+
+          ]
+        },
+        {
+          "question": "What class is used for strong text?",
+          "answers": [
+            {"text":  "Character", "correct":  false},
+            {"text":  "String", "correct":  true},
+            {"text":  "Text", "correct":  false},
+            {"text":  "Array", "correct":  false}
+
+          ]
+        },
+        {
+          "question": "What is the type of storing whole numbers using up to 64 bits?",
+            "answers": [
+              {"text":  "int", "correct":  false},
+              {"text":  "long", "correct":  true},
+              {"text":  "double", "correct":  false},
+              {"text":  "float", "correct":  false}
+            ]
+        },
+        {
+          "question": "What is the type of storing floating numbers using up to 32 bits?",
+            "answers": [
+              {"text":  "int", "correct":  false},
+              {"text":  "long", "correct":  false},
+              {"text":  "double", "correct":  false},
+              {"text":  "float", "correct":  true}
+            ]
+        },
+        {
+          "question": "Where should be the line declaring the package of the class appear?",
+          "answers": [
+            {"text":  "At the beginning of the file", "correct":  true},
+            {"text":  "At the end of the file", "correct":  false},
+            {"text":  "Anywhere in the file", "correct":  false},
+            {"text":  "It is not necessary", "correct":  false}
+          ]
+
+        }
+
+      ]
+    },
+    {
+
+    }
+    ]
+}

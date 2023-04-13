@@ -1,6 +1,8 @@
 package com.example.school_app;
 
 
+import static java.lang.String.*;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,8 +38,8 @@ public class LeaderboardAdapter extends RecyclerView.Adapter<LeaderboardAdapter.
     public void onBindViewHolder(ViewHolder holder, int position) {
         UserModel user = usersList.get(position);
         holder.tvEmail.setText(user.getEmail());
-        holder.tvCorrectAnswers.setText(String.valueOf(user.getTotalCorrectAnswers()));
-        holder.tvAverageAccuracy.setText(String.format("%.2f%%", user.getAccuracy() * 100));
+        holder.tvCorrectAnswers.setText(valueOf(user.getTotalCorrectAnswers()));
+        holder.tvAverageAccuracy.setText(String.format("%.2f%%", user.getAccuracy()));
     }
 
     @Override

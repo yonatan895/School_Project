@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
                         firebaseFirestore.collection("User")
                                 .document(Objects.requireNonNull(FirebaseAuth.getInstance().getUid()))
-                                .set(new UserModel(email, 0, 0, 0));
+                                .set(new UserModel(email, 0, 0));
                     })
                     .addOnFailureListener(e -> {
                         Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();

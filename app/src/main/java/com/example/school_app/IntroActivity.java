@@ -32,7 +32,7 @@ public class IntroActivity extends BaseActivity {
 
 
 
-    public void updateUserScore(Context context, int correctAnswers, int totalQuestions) {
+   /* public void updateUserScore(Context context, int correctAnswers, int totalQuestions) {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
             FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -49,7 +49,7 @@ public class IntroActivity extends BaseActivity {
         } else {
             Toast.makeText(context, "Error updating user score: User not signed in", Toast.LENGTH_SHORT).show();
         }
-    }
+    } */
 
 
 
