@@ -1,43 +1,43 @@
 package com.example.school_app;
 
-import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import javax.annotation.Generated;
 
 @Generated("jsonschema2pojo")
 public class Answer {
 
-    @SerializedName("text")
-    @Expose
-    private String text;
-    @SerializedName("correct")
-    @Expose
-    private boolean correct;
+  @SerializedName("text")
+  @Expose
+  private String text;
 
-    public String getText() {
-        return text;
-    }
+  @SerializedName("correct")
+  @Expose
+  private boolean correct;
 
-    public void setText(String text) {
-        this.text = text;
-    }
+  public String getText() {
+    return text;
+  }
 
-    public Answer withText(String text) {
-        this.text = text;
-        return this;
-    }
+  public void setText(String text) {
+    this.text = text;
+  }
 
-    public boolean isCorrect() {
-        return correct;
-    }
+  public Answer withText(String text) {
+    this.text = text;
+    return this;
+  }
 
-    public void setCorrect(boolean correct) {
-        this.correct = correct;
-    }
+  public boolean isCorrect() {
+    return correct;
+  }
 
-    public Answer withCorrect(boolean correct) {
-        this.correct = correct;
-        return this;
-    }
+  public void setCorrect(boolean correct) {
+    this.correct = correct;
+  }
 
+  public Answer withCorrect(boolean correct) {
+    this.correct = correct;
+    return this;
+  }
 }
