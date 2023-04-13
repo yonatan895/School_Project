@@ -1,6 +1,5 @@
 package com.example.school_app;
 
-
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.RadioGroup;
