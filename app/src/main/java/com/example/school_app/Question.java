@@ -1,44 +1,44 @@
 package com.example.school_app;
 
-import java.util.List;
-import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import java.util.List;
+import javax.annotation.Generated;
 
 @Generated("jsonschema2pojo")
 public class Question {
 
-    @SerializedName("question")
-    @Expose
-    private String question;
-    @SerializedName("answers")
-    @Expose
-    private List<Answer> answers;
+  @SerializedName("question")
+  @Expose
+  private String question;
 
-    public String getQuestion() {
-        return question;
-    }
+  @SerializedName("answers")
+  @Expose
+  private List<Answer> answers;
 
-    public void setQuestion(String question) {
-        this.question = question;
-    }
+  public String getQuestion() {
+    return question;
+  }
 
-    public Question withQuestion(String question) {
-        this.question = question;
-        return this;
-    }
+  public void setQuestion(String question) {
+    this.question = question;
+  }
 
-    public List<Answer> getAnswers() {
-        return answers;
-    }
+  public Question withQuestion(String question) {
+    this.question = question;
+    return this;
+  }
 
-    public void setAnswers(List<Answer> answers) {
-        this.answers = answers;
-    }
+  public List<Answer> getAnswers() {
+    return answers;
+  }
 
-    public Question withAnswers(List<Answer> answers) {
-        this.answers = answers;
-        return this;
-    }
+  public void setAnswers(List<Answer> answers) {
+    this.answers = answers;
+  }
 
+  public Question withAnswers(List<Answer> answers) {
+    this.answers = answers;
+    return this;
+  }
 }
