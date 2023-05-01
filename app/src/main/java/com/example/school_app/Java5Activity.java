@@ -14,5 +14,13 @@ public class Java5Activity extends BaseActivity {
         highlightText(R.id.generic_1,"List<String> strings = new ArrayList<String>();");
         highlightText(R.id.generic_2,"Map<Long, String> map = new HashMap<Long, String>();");
         highlightText(R.id.generic_3,"Map<Long, String> map = new HashMap<>();");
+        highlightText(R.id.concise_loop, getResources().getString(R.string.concise_example));
+        highlightText(R.id.static_import, "import static java.lang.System.out");
+        highlightText(R.id.print_spaced, "printSpaced(1,2,3)");
+        highlightText(R.id.enums, "enum letter{A,B,C};");
+        highlightText(R.id.var_args, "void printSpaced(Object ... objects){\n for(Object o: objects)\n out.print(o)");
+        highlightText(R.id.enum_example, getResources().getString(R.string.enum_example));
+
+
     }
 }

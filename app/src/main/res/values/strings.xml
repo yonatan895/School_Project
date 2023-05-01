@@ -44,7 +44,7 @@
     <string name="java_packages">The standard implementation of Java comes in two different packages: the <b>JRE</b> (Java Runtime Environment) and the <b>JDK</b> (Java Development Kit). The JRE is strictly for running Java as an end-user, while the JDK is for developing Java code. The JDK comes with the <font color="#FF4081">javac</font> command for compiling Java code to byte-code among other things.
     </string>
     <string name="java_com_proc">To make Java more open and community-based, Sun Microsystems started the Java community process (JCP), which allows a somewhat democratic evolution of Java and JVM specifications.\n
-\nAlso, Sun relicensed most of its Java technologies under the GNU General Public License in May 2007, resulting in multiple open-source implementations of the JVM. OpenJDK is the current official implementation.
+\nAlso, Sun licensed most of its Java technologies under the GNU General Public License in May 2007, resulting in multiple open-source implementations of the JVM. OpenJDK is the current official implementation.
 </string>
     <string name="eco_ide">The Java ecosystem is huge. It is mainly composed of JVM\’s, libraries, tools, and IDE\’s. The three most popular IDE\’s, in no particular order, are :
 </string>
@@ -222,6 +222,150 @@ Let’s make a simple class below!
         \nTo reduce “wiring” code, annotations such as <font color="#FF4081">@Autowired</font> and <font color="#FF4081">@Inject</font> are used by direct-injection frameworks like Spring and Google Guice, respectively.
 </string>
     <string name="total_questions">"Total Questions: "</string>
+    
+
+<string name="concise_loops">we can write <font color="#FF4001">for</font> loops concisely for an array or any class that implements <font color="#FF4081">Iterable</font> For example:</string>
+    <string name="concise_example">import static java.lang.System.out;\n
+class main {\n
+    \tpublic static void main( String args[] ) {\n
+      \tString[] strArray = {"a","b","c"};\n
+      \tfor (String str : strArray)\n
+          \tout.println(str);\n
+    \t}\n
+}\n
+</string>
+
+    <string name="static_import">In Java 5, we can use the words <font color="#FF4081">import static</font> to import a static member of another class. This can help our code be more concise as shown in the above section. To do this, we would need the following at the top of the class file:
+</string>
+    <string name="static_import_warning">However, the creators of Java recommend that we use the static import very sparingly, so don’t get carried away.
+</string>
+
+
+
+    <string name="autoboxing">The Java compiler will automatically wrap a primitive type in the corresponding object when it is necessary. For example, when assigning a variable or passing in parameters to a function:
+</string>
+    
+    <string name="unboxing">This is simply the reverse of autoboxing. The Java compiler will unwrap an object to the corresponding primitive type when possible.
+</string>
+
+    <string name="var_args">We can declare a method’s last parameter with an ellipse (<font color="#FF4081">...</font>), and it will be interpreted to accept any number of parameters (including zero) and convert them into an array in our method. For example, see the following code:
+</string>
+
+    <string name="enum_example">import static java.lang.System.out;\n
+public class main\n
+{
+    //decalring an enum\n
+    enum Letter {\n
+    A,\n
+    B,\n
+    C;}\n
+
+    // function to print\n
+    static void printSpaced(Object... objects) {\n
+    for (Object o : objects)\n
+        out.print(o + " ");\n
+    }
+
+    public static void main(String[] args)\n
+    {\n
+        printSpaced(Letter.A,Letter.B,Letter.C); //ABC\n
+        out.print("\n"); //new line\n
+        printSpaced(1,2,3); //123\n
+    }\n
+}
+</string>
+
+    <string name="print_spaced_example">The above code declares an enum <font color="#FF4081">Letter</font> consisting of “<font color="#FF4081">A</font>,” “<font color="#FF4081">B</font>,” and “<font color="#FF4081">C</font>.” The function <font color="#FF4081">printSpaced()</font> then uses a <font color="#FF4081">for</font> loop to print the contents of <font color="#FF4081">Letter</font>. It also prints the values in a similar way when they are passed directly. For example, when “1, 2, 3” are used as input, the output is “1 2 3.”
+You can tweak around with the above code to get a better understanding of the concept.
+</string>
+
+    <string name="java6_pt">
+        • Changes in Java 6
+    </string>
+
+    <string name="changes_java_6">
+        Java 6 did not have as many big changes as Java 5, but it did add the following:\n
+
+        \n• <b>Web Services</b>: First-class support for writing XML web services.\n
+        \n• <b>Scripting:</b> The ability to plug in scripting engines(JavaScript, Ruby and Groovy for example).\n
+        \n• <b>Java DB</b> (Apache Derby): It is co-bundled in the JRE.\n
+        \n• <b>JDBC 4.0</b>: It adds many feature additions like special support for XML as SQL data type and better integration of Binary Large Objects (BLOBs) Character Large Object (CLOBs)\n
+        \n• <b>More Desktop APIs</b>: SwingWorker, JTable and more\n
+        \n• <b>Monitoring and Management</b>: Jhat for forensic explorations of core dumps.\n
+        \n• <b>Compiler Access:</b>: The compiler API opens up programmatic access to javac for in-process compilation of dynamically generated Java code.\n
+        \n• <b>Override interface methods</b>: The <font color="#FF4081">@Override</font> annotation can be used to declare we are overriding an interface method.\n</string>
+
+
+
+
+<string name="java7_pt">
+
+        \n• Diamond operator
+        \n• String in switch
+        \n• Automatic resource management
+        \n• Improved exception handling
+        \n• Numbers with underscores\n
+
+    \n The following features have been added to the Java language:\n
+
+     \n• Diamond operator
+        \n• String in switch
+        \n• Automatic resource management
+        \n• Improved exception handling
+        \n• Numbers with underscores\n
+
+
+
+</string>
+
+
+    <string name="diamond_operator">The <b>Diamond operator</b> simplifies the declaration of generic classes. The generic types are inferred from the definition of the field or variable.
+</string>
+
+    <string name="switch_explain">We can now use strings in switch statements. For example, the following code would compile and work in Java 7:
+</string>
+
+
+    <string name="switch_example">
+    <![CDATA[
+        public static <T> Collection<T> makeNew(String type, Class<T> tClass) {\n
+            \nswitch (type) {\n
+                \ncase "set":
+                    \nreturn new HashSet<>();\n
+                \ncase "lset":\n
+                    \nreturn new LinkedHashSet<>();\n
+                \ncase "treeset":\n
+                    \nreturn new TreeSet<>();\n
+                \ncase "vector":\n
+                    \nreturn new Vector<>();\n
+                \ncase "array":\n
+                    \nreturn new ArrayList<>();\n
+                \ndefault:\n
+                    \nreturn new LinkedList<>();\n
+            }\n
+        }\n
+    ]]>
+</string>
+
+    <string name="auto_res_management">
+        As seen above, Strings can now be used just like any other primitive data type would in a switch statement.
+
+    </string>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 </resources>
