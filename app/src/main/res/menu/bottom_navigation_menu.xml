@@ -11,8 +11,8 @@
 
     <item
         android:id="@+id/text_editor"
-        android:title="Text Editor"
-        android:icon="@drawable/ic_text_editor"
+        android:title="Quizzes"
+        android:icon="@drawable/ic_quiz"
         />
 
     <item

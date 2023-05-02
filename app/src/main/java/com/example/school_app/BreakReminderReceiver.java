@@ -8,6 +8,10 @@ import android.content.Intent;
 import androidx.core.app.NotificationCompat;
 
 public class BreakReminderReceiver extends BroadcastReceiver {
+    /**
+     * @param context The Context in which the receiver is running.
+     * @param intent  The Intent being received.
+     */
     @Override
     public void onReceive(Context context, Intent intent) {
         // Create a notification to remind the user to take a break

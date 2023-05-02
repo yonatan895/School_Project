@@ -1,19 +1,17 @@
 package com.example.school_app;
 
-import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+
 import android.widget.Button;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
-import org.json.JSONException;
 
-import java.io.IOException;
+
+
 import java.util.ArrayList;
-import java.util.HashSet;
+
 
 
 public class IntroQuizActivity extends QuizActivity {
@@ -22,7 +20,7 @@ public class IntroQuizActivity extends QuizActivity {
     private TextView mQuestionTextView;
     private RadioGroup mAnswersRadioGroup;
 
-    private final ArrayList<Question> mQuestionsList = new ArrayList<>();
+    private final ArrayList<Question> mQuestionsList = setQuestionsList(getCollectionName());
     private int mCurrentQuestionIndex = 0;
 
 
@@ -35,7 +33,6 @@ public class IntroQuizActivity extends QuizActivity {
         mAnswersRadioGroup = findViewById(R.id.answers_radio_group);
         Button mSubmitButton = findViewById(R.id.submit_button);
 
-        loadQuiz(getCollectionName());
 
         mSubmitButton.setOnClickListener(view -> onAnswerSelected());
 

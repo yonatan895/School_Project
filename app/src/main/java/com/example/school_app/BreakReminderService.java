@@ -10,6 +10,7 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 
+
 public class BreakReminderService extends Service {
     private static final long INTERVAL = 30 * 60 * 1000; // 30 minutes in milliseconds
     private static final String TAG = "BreakReminderService";
@@ -29,6 +30,16 @@ public class BreakReminderService extends Service {
         receiver = new BreakReminderReceiver();
     }
 
+    /**
+     * @param intent  The Intent supplied to {@link android.content.Context#startService},
+     *                as given.  This may be null if the service is being restarted after
+     *                its process has gone away, and it had previously returned anything
+     *                except {@link #START_STICKY_COMPATIBILITY}.
+     * @param flags   Additional data about this start request.
+     * @param startId A unique integer representing this specific request to
+     *                start.  Use with {@link #stopSelfResult(int)}.
+     * @return
+     */
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         Log.i(TAG, "Service started");
@@ -39,6 +50,7 @@ public class BreakReminderService extends Service {
         alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), INTERVAL, pendingIntent);
         return START_STICKY;
     }
+
 
     @Override
     public void onDestroy() {

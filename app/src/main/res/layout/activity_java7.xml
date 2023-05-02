@@ -154,7 +154,7 @@
                     android:textSize="14sp"/>
 
                 <com.pddstudio.highlightjs.HighlightJsView
-                    android:id="@+id/print_spaced"
+                    android:id="@+id/auto_res"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     />

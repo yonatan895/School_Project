@@ -20,9 +20,16 @@ import com.pddstudio.highlightjs.models.Theme;
 import java.util.Objects;
 
 public abstract class BaseActivity extends AppCompatActivity {
+
+
     ActionBarDrawerToggle actionBarDrawerToggle;
     // List of course activities
     private final Class<?>[] activityList = {IntroActivity.class, JavaEcosystemActivity.class, CourseStructureActivity.class, PrimAndArrActivity.class, ClassesInJavaActivity.class, CommentsInJavaActivity.class,Java5Activity.class, Java6Activity.class, Java7Activity.class, NewIOActivity.class, JVMBenefitsActivity.class, WhatInJava8Activity.class, LambdaExpActivity.class,Java8_vs_Java7Activity.class,DefaultsActivity.class,StreamsActivity.class, ForEachActivity.class, PeekActivity.class, CollectorActivity.class, GroupingActivity.class, FeaturesActivity.class, FunctionalActivity.class, BackportsActivity.class, ModularityActivity.class, JShellActivity.class,LocalActivity.class, Java12FeatureActivity.class, LogbackActivity.class, HibernateActivity.class, GuavaActivity.class,ConcurrentActivity.class, FuturesActivity.class, STMActivity.class, GroovyGparsActivity.class   };
+
+    /**
+     * @param resource
+     * @param context
+     */
 // Setup navigation drawer
     protected void setupNavigationDrawer(int resource, Context context) {
         DrawerLayout drawerLayout = findViewById(resource);
@@ -49,6 +56,11 @@ public abstract class BaseActivity extends AppCompatActivity {
             return false;
         });
     }
+
+    /**
+     * @param resource
+     * @param context
+     */
 // Setup bottom navigation menu, using the activity list to navigate between activities
     protected void setupBottomNavigationMenu(int resource, Context context) {
         BottomNavigationView bottomNavigationView = findViewById(resource);
@@ -68,19 +80,28 @@ public abstract class BaseActivity extends AppCompatActivity {
                     return true;
                 }
             } else if (id == R.id.text_editor) {
-                startActivity(new Intent(context, IntroQuizActivity.class));
+                startActivity(new Intent(context, QuizLauncher.class));
                 return true;
             }
             return false;
         });
     }
     // Highlight snippets of code inside the course
+
+    /**
+     * @param resource
+     * @param text
+     */
     protected void highlightText(int resource, String text) {
         HighlightJsView highlightJsView = findViewById(resource);
         highlightJsView.setTheme(Theme.ANDROID_STUDIO);
         highlightJsView.setHighlightLanguage(Language.JAVA);
         highlightJsView.setSource(text);
     }
+
+    /**
+     * @return ActivityIndex
+     */
     private int getCurrentActivityIndex() {
         Class<?> currentClass = getClass();
         for (int i = 0; i < activityList.length; i++) {
@@ -92,7 +113,10 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
 
-
+    /**
+     * @param item The menu item that was selected.
+     * @return
+     */
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (actionBarDrawerToggle.onOptionsItemSelected(item)) {

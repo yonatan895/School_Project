@@ -37,32 +37,16 @@ public abstract class QuizActivity extends AppCompatActivity {
     private TextView mQuestionTextView;
     private RadioGroup mAnswersRadioGroup;
 
-    private ArrayList<Question> mQuestionsList = new ArrayList<>();
+    private final ArrayList<Question> mQuestionsList = setQuestionsList(getCollectionName());
     private int mCurrentQuestionIndex = 0;
 
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quiz);
-
-        // Initialize views
-        mQuestionTextView = findViewById(R.id.question_text_view);
-        mAnswersRadioGroup = findViewById(R.id.answers_radio_group);
-        Button mSubmitButton = findViewById(R.id.submit_button);
-
-
-        // Load questions
-        loadQuiz(getCollectionName());
-
-        // Set submit button click listener
-        mSubmitButton.setOnClickListener(view -> onAnswerSelected());
-
-
+    protected QuizActivity() {
     }
 
+
     protected void displayCurrentQuestion() {
-        mQuestionsList = new ArrayList<>(mQuestionsList.subList(0, 6));
+
         // Get current question
         Question currentQuestion = mQuestionsList.get(mCurrentQuestionIndex);
 
@@ -108,7 +92,7 @@ public abstract class QuizActivity extends AppCompatActivity {
 
     // Load JSON file containing questions and answers for the quiz
 
-    protected void setQuestionsList(String collectionName) throws IOException {
+    protected ArrayList<Question> setQuestionsList(String collectionName) {
         try {
             Gson gson = new Gson();
             InputStream is = getAssets().open("quizzes.json");
@@ -118,6 +102,7 @@ public abstract class QuizActivity extends AppCompatActivity {
 
             for (Quiz quiz : quizzes.getQuizzes()) {
                 if (quiz.getName().equals(collectionName)) {
+                    assert mQuestionsList != null;
                     mQuestionsList.addAll(quiz.getQuestions());
                     break;
                 }
@@ -125,27 +110,9 @@ public abstract class QuizActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        displayCurrentQuestion();
+        return mQuestionsList;
     }
 
-    void loadQuiz(String collectionName) {
-        try {
-            InputStream is = getAssets().open("quizzes.json");
-            BufferedReader reader = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8));
-
-            QuizCollection quizzes = new Gson().fromJson(reader, QuizCollection.class);
-            mQuestionsList.addAll(quizzes.getQuizzes().get(0).getQuestions());
-            for(int i = 0; i < mQuestionsList.size(); i++) {
-                Log.d("QuizActivity", "loadQuiz: " + mQuestionsList.get(i).getQuestion());
-            }
-
-
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        displayCurrentQuestion();
-    }
 
 
     private void updateScore(boolean isAnswerCorrect) {
