@@ -330,15 +330,15 @@ You can tweak around with the above code to get a better understanding of the co
     <![CDATA[
         public static <T> Collection<T> makeNew(String type, Class<T> tClass) {\n
             \nswitch (type) {\n
-                \ncase "set":
+                \ncase &quotset&quot:
                     \nreturn new HashSet<>();\n
-                \ncase "lset":\n
+                \ncase &quotlset&quot:\n
                     \nreturn new LinkedHashSet<>();\n
-                \ncase "treeset":\n
+                \ncase &quottreeset&quot:\n
                     \nreturn new TreeSet<>();\n
-                \ncase "vector":\n
+                \ncase &quotvector&quot:\n
                     \nreturn new Vector<>();\n
-                \ncase "array":\n
+                \ncase &quotarray&quot:\n
                     \nreturn new ArrayList<>();\n
                 \ndefault:\n
                     \nreturn new LinkedList<>();\n
@@ -352,10 +352,20 @@ You can tweak around with the above code to get a better understanding of the co
 
     </string>
 
+    <string name="auto_res_example">
+        public void writeWithTry() {\n
+            \ntry {\n
+                \nFileOutputStream fos = new FileOutputStream(&amp;quotbooks.txt&amp;quot);
+                \n DataOutputStream dos = new DataOutputStream(fos) {\n
+                    \ndos.writeUTF(&amp; quotModernJava)\n
+            \ncatch (IOException e) {\n
+                // log the exception
+        }
+        }
+        }\n
+        }
 
-
-
-
+    </string>
 
 
 
