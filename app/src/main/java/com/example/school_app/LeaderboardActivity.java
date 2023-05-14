@@ -22,6 +22,18 @@ public class LeaderboardActivity extends BaseActivity {
     private ActionBarDrawerToggle actionBarDrawerToggle;
     private LeaderboardAdapter adapter;
 
+
+
+    /**
+     * The onCreate function is called when the activity is created.
+     * It sets up the RecyclerView and queries Firebase to get all of the users in order of their totalCorrectAnswers.
+
+     *
+     * @param savedInstanceState Save the state of the application
+
+     *
+     * @docauthor Jonathan
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

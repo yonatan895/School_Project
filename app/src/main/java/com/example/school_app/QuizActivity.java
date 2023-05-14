@@ -45,6 +45,15 @@ public abstract class QuizActivity extends AppCompatActivity {
     }
 
 
+    /**
+     * The displayCurrentQuestion function is responsible for displaying the current question to the user.
+     * It does this by first getting the current question from mQuestionsList, then setting that text as
+     * mQuestionTextView's text. Next, it clears all radio buttons in mAnswersRadioGroup and adds a new one for each answer option in our list of answers.
+
+     * <p>
+     *
+     * @docauthor Jonathan
+     */
     protected void displayCurrentQuestion() {
 
         // Get current question
@@ -66,6 +75,15 @@ public abstract class QuizActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * The onAnswerSelected function is called when the user selects an answer.
+     * It checks if the selected answer is correct and updates the score accordingly.
+     * If there are more questions, it displays them; otherwise, it finishes the quiz.
+
+     * <p>
+     *
+     * @docauthor Jonathan
+     */
     void onAnswerSelected() {
         // Get selected answer
         int selectedAnswerIndex = mAnswersRadioGroup.getCheckedRadioButtonId();
@@ -85,6 +103,18 @@ public abstract class QuizActivity extends AppCompatActivity {
             finishQuiz();
         }
     }
+    /**
+     * The isCorrectAnswer function takes in a Question object and an integer representing the index of the selected answer.
+     * It then returns true if the selected answer is correct, or false otherwise.
+
+     *
+     * @param  question Get the answers for that question
+     * @param  selectedAnswerIndex Get the selected answer from the question
+     *
+     * @return A boolean value
+     *
+     * @docauthor Jonathan
+     */
     private boolean isCorrectAnswer(Question question, int selectedAnswerIndex) {
         Answer selectedAnswer = question.getAnswers().get(selectedAnswerIndex);
         return selectedAnswer.isCorrect();
@@ -92,6 +122,20 @@ public abstract class QuizActivity extends AppCompatActivity {
 
     // Load JSON file containing questions and answers for the quiz
 
+
+
+    /**
+     * The setQuestionsList function takes in a string parameter, collectionName.
+     * It then uses the Gson library to parse through the quizzes.json file and find
+     * the quiz with a name that matches collectionName. Once it finds this quiz, it adds all of its questions to an ArrayList&lt;Question&gt; called mQuestionsList.
+
+     *
+     * @param collectionName Determine which quiz to load
+     *
+     * @return An arraylist of question objects
+     *
+     * @docauthor Jonathan
+     */
     protected ArrayList<Question> setQuestionsList(String collectionName) {
         try {
             Gson gson = new Gson();
@@ -115,6 +159,16 @@ public abstract class QuizActivity extends AppCompatActivity {
 
 
 
+    /**
+     * The updateScore function updates the user's score in Firebase.
+     * It does this by first getting a reference to the database and then getting a reference to the current user.
+     * If there is no current user, it will not update anything. Otherwise, it will get a document reference for that specific user from FirebaseFirestore db and then check if their answer was correct or incorrect using an if statement.
+     * If their answer was correct, it increments totalCorrectAnswers by 1 and totalQuestions by 1 (since they answered one question). Otherwise, only totalQuestions is incremented since they did not get that question right. Then we
+     *
+     * @param isAnswerCorrect Determine if the answer is correct or not
+     *
+     * @docauthor Jonathan
+     */
     private void updateScore(boolean isAnswerCorrect) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
@@ -139,6 +193,16 @@ public abstract class QuizActivity extends AppCompatActivity {
         }
 
 // Start the finished quiz activity
+    /**
+     * The finishQuiz function is called when the user has answered all of the questions in a quiz.
+     * It creates an intent to start the FinishedQuizActivity, and passes it two pieces of information:
+     * 1) The number of correct answers that were given by the user (correctAnswers).
+     * 2) The total number of questions in this quiz (totalQuestions).
+
+     * <p>
+     *
+     * @docauthor Jonathan
+     */
     protected  void finishQuiz() {
         Intent intent = new Intent(this, FinishedQuizActivity.class);
         Bundle bundle = new Bundle();

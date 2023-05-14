@@ -34,7 +34,6 @@ public class LeaderboardAdapter extends RecyclerView.Adapter<LeaderboardAdapter.
      * @param parent   The ViewGroup into which the new View will be added after it is bound to
      *                 an adapter position.
      * @param viewType The view type of the new View.
-     * @return
      */
     @NonNull
     @Override

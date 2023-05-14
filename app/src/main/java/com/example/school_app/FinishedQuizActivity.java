@@ -8,6 +8,16 @@ import android.widget.TextView;
 
 public class FinishedQuizActivity extends BaseActivity {
 
+    /**
+     * The onCreate function is called when the activity is created.
+     * It sets up the layout for this activity, and gets information from a bundle passed to it by another activity.
+     * The score and total questions are displayed in text views, and two buttons are set up with onClickListeners that take you back to either the quiz or intro screen.
+
+     *
+     * @param savedInstanceState Save the state of the app when it is paused or stopped
+     *
+     * @docauthor Jonathan
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

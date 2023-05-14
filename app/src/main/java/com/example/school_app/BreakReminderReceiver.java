@@ -9,8 +9,15 @@ import androidx.core.app.NotificationCompat;
 
 public class BreakReminderReceiver extends BroadcastReceiver {
     /**
-     * @param context The Context in which the receiver is running.
-     * @param intent  The Intent being received.
+     * The onReceive function is called when the alarm goes off.
+     * It creates a notification to remind the user to take a break.
+
+     *
+     * @param  context Access the application's environment
+     * @param  intent Pass data to the onreceive function
+
+     *
+     * @docauthor Jonathan
      */
     @Override
     public void onReceive(Context context, Intent intent) {

@@ -30,10 +30,19 @@ public class IntroActivity extends BaseActivity {
     }
 
 
+
     /**
-     * @param context
-     * @param correctAnswers
-     * @param totalQuestions
+     * The updateUserScore function updates the user's score in the database.
+     * It takes two parameters: correctAnswers and totalQuestions, which are both integers.
+     * The function first checks if a user is signed in, then it gets an instance of FirebaseFirestore and creates a reference to the current user's document.
+     * Then it increments their totalCorrectAnswers by correctAnswers and their totalQuestions by totalQuestions using FieldValue.increment().
+     * Next, it gets that same document again so that we can calculate averageAccuracy (totalCorrectAnswers/totalQuestions). We do this because we don't want to have
+     *
+     * @param  context Display a toast message to the user if there is an error updating their score
+     * @param  correctAnswers Increment the totalcorrectanswers field in the database
+     * @param  totalQuestions Calculate the average accuracy of a user
+     *
+     * @docauthor Jonathan
      */
     public void updateUserScore(Context context, int correctAnswers, int totalQuestions) {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();

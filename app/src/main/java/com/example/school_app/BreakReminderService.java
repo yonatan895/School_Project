@@ -18,6 +18,19 @@ public class BreakReminderService extends Service {
     private final IBinder binder = new LocalBinder();
     private BroadcastReceiver receiver;
 
+    /**
+     * The onBind function is used to bind the service to an activity.
+     * This function returns a binder object that allows the activity
+     * to access public methods in this service. The binder object is
+     * created by instantiating a class that extends Binder and overriding its onBind method.
+
+     *
+     * @param intent Pass data to the service
+     *
+     * @return An instance of the ibinder class
+     *
+     * @docauthor Jonathan
+     */
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
@@ -31,14 +44,17 @@ public class BreakReminderService extends Service {
     }
 
     /**
-     * @param intent  The Intent supplied to {@link android.content.Context#startService},
-     *                as given.  This may be null if the service is being restarted after
-     *                its process has gone away, and it had previously returned anything
-     *                except {@link #START_STICKY_COMPATIBILITY}.
-     * @param flags   Additional data about this start request.
-     * @param startId A unique integer representing this specific request to
-     *                start.  Use with {@link #stopSelfResult(int)}.
-     * @return
+     * The onStartCommand function is called when the service is started.
+     * It schedules a repeating alarm to send a broadcast every 30 minutes.
+
+     *
+     * @param intent Pass data to the service
+     * @param flags Indicate how the service should be started
+     * @param startId Identify the start request
+     *
+     * @return Start_sticky, which means that the service will be restarted if it is killed
+     *
+     * @docauthor Jonathan
      */
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
@@ -52,6 +68,12 @@ public class BreakReminderService extends Service {
     }
 
 
+    /**
+     * The onDestroy function is called when the service is no longer used and is being destroyed.
+     * It stops the scheduled broadcast, which in turn stops the alarm from going off.
+     *
+     * @docauthor Jonathan
+     */
     @Override
     public void onDestroy() {
         super.onDestroy();

@@ -10,12 +10,33 @@ public class JavaSyntaxHighlighter {
     private static final String[] TYPES = {"boolean", "byte", "char", "double", "float", "int", "long", "short", "void"};
     private static final String[] MODIFIERS = {"abstract", "final", "native", "private", "protected", "public", "static", "synchronized", "transient", "volatile"};
 
+    /**
+     * The applySyntaxHighlighting function takes a SpannableStringBuilder object and applies
+     * syntax highlighting to it. It does this by applying ForegroundColorSpan objects to the
+     * builder, which will cause the text in question to be displayed in a different color. The
+     * function uses three regular expressions (KEYWORDS, TYPES, and MODIFIERS) that match Java keywords, types (such as int), and modifiers (such as public). Each of these is applied with a different color: orange for keywords, green for types, purple for modifiers. This is done using the applyColor helper function defined below. Note that we
+     *
+     * @param  builder Apply the color to the text
+     *
+     * @docauthor Jonathan
+     */
     public static void applySyntaxHighlighting(SpannableStringBuilder builder) {
         applyColor(builder, KEYWORDS, 0xFF8800);    // Orange
         applyColor(builder, TYPES, 0x008800);       // Green
         applyColor(builder, MODIFIERS, 0x880088);   // Purple
     }
 
+    /**
+     * The applyColor function takes a SpannableStringBuilder, an array of words to highlight, and a color.
+     * It then iterates through the words in the array and highlights each one by setting its foreground color.
+
+     *
+     * @param  builder Apply the color to the text
+     * @param  words Pass in the words that should be highlighted
+     * @param  color Set the color of the text
+     *
+     * @docauthor Jonathan
+     */
     private static void applyColor(SpannableStringBuilder builder, String[] words, int color) {
         for (String word : words) {
             int start = 0;
