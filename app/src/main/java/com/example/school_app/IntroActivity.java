@@ -42,7 +42,6 @@ public class IntroActivity extends BaseActivity {
      * @param  correctAnswers Increment the totalcorrectanswers field in the database
      * @param  totalQuestions Calculate the average accuracy of a user
      *
-     * @docauthor Jonathan
      */
     public void updateUserScore(Context context, int correctAnswers, int totalQuestions) {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();

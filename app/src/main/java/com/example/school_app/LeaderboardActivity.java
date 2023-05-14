@@ -32,7 +32,6 @@ public class LeaderboardActivity extends BaseActivity {
      * @param savedInstanceState Save the state of the application
 
      *
-     * @docauthor Jonathan
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {

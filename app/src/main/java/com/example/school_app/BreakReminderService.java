@@ -11,6 +11,7 @@ import android.util.Log;
 import androidx.annotation.Nullable;
 
 
+
 public class BreakReminderService extends Service {
     private static final long INTERVAL = 30 * 60 * 1000; // 30 minutes in milliseconds
     private static final String TAG = "BreakReminderService";
@@ -29,7 +30,6 @@ public class BreakReminderService extends Service {
      *
      * @return An instance of the ibinder class
      *
-     * @docauthor Jonathan
      */
     @Nullable
     @Override
@@ -54,7 +54,6 @@ public class BreakReminderService extends Service {
      *
      * @return Start_sticky, which means that the service will be restarted if it is killed
      *
-     * @docauthor Jonathan
      */
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
@@ -72,7 +71,6 @@ public class BreakReminderService extends Service {
      * The onDestroy function is called when the service is no longer used and is being destroyed.
      * It stops the scheduled broadcast, which in turn stops the alarm from going off.
      *
-     * @docauthor Jonathan
      */
     @Override
     public void onDestroy() {
@@ -86,7 +84,12 @@ public class BreakReminderService extends Service {
     }
 
     public class LocalBinder extends android.os.Binder {
-         BreakReminderService getService() {
+        /**
+         * Gets service.
+         *
+         * @return the service
+         */
+        BreakReminderService getService() {
             return BreakReminderService.this;
         }
 }

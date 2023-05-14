@@ -11,10 +11,21 @@ import com.example.school_app.databinding.ActivityLoginBinding;
 import com.google.firebase.auth.FirebaseAuth;
 
 
-
+/**
+ * The type Login activity.
+ */
 public class LoginActivity extends AppCompatActivity {
+    /**
+     * The Binding.
+     */
     ActivityLoginBinding binding;
+    /**
+     * The Firebase auth.
+     */
     FirebaseAuth firebaseAuth;
+    /**
+     * The Progress dialog.
+     */
     ProgressDialog progressDialog;
 
 

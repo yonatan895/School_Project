@@ -18,7 +18,6 @@ public class JavaSyntaxHighlighter {
      *
      * @param  builder Apply the color to the text
      *
-     * @docauthor Jonathan
      */
     public static void applySyntaxHighlighting(SpannableStringBuilder builder) {
         applyColor(builder, KEYWORDS, 0xFF8800);    // Orange
@@ -35,7 +34,6 @@ public class JavaSyntaxHighlighter {
      * @param  words Pass in the words that should be highlighted
      * @param  color Set the color of the text
      *
-     * @docauthor Jonathan
      */
     private static void applyColor(SpannableStringBuilder builder, String[] words, int color) {
         for (String word : words) {

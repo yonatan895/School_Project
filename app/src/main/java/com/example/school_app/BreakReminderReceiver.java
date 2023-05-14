@@ -7,6 +7,7 @@ import android.content.Intent;
 
 import androidx.core.app.NotificationCompat;
 
+
 public class BreakReminderReceiver extends BroadcastReceiver {
     /**
      * The onReceive function is called when the alarm goes off.
@@ -17,7 +18,6 @@ public class BreakReminderReceiver extends BroadcastReceiver {
      * @param  intent Pass data to the onreceive function
 
      *
-     * @docauthor Jonathan
      */
     @Override
     public void onReceive(Context context, Intent intent) {

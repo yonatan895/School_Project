@@ -20,7 +20,9 @@ import com.pddstudio.highlightjs.models.Theme;
 import java.util.Objects;
 
 
+
 public abstract class BaseActivity extends AppCompatActivity {
+
 
 
     ActionBarDrawerToggle actionBarDrawerToggle;
@@ -109,7 +111,6 @@ public abstract class BaseActivity extends AppCompatActivity {
      *
      * @return The index of the current activity in the array
      *
-     * @docauthor Jonathan
      */
     private int getCurrentActivityIndex() {
         Class<?> currentClass = getClass();
@@ -126,12 +127,8 @@ public abstract class BaseActivity extends AppCompatActivity {
     /**
      * The onOptionsItemSelected function is called when an item in the toolbar is selected.
      *
-     * @param @NonNull MenuItem item Get the id of the item that was clicked
-
-     *
      * @return A boolean value
      *
-     * @docauthor Jonathan
      */
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {

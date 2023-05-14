@@ -13,13 +13,28 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Objects;
 
+/**
+ * The type Main activity.
+ */
 public class MainActivity extends AppCompatActivity {
 
+    /**
+     * The Binding.
+     */
     ActivityMainBinding binding;
 
+    /**
+     * The Progress dialog.
+     */
     ProgressDialog progressDialog;
 
+    /**
+     * The Firebase auth.
+     */
     FirebaseAuth firebaseAuth;
+    /**
+     * The Firebase firestore.
+     */
     FirebaseFirestore firebaseFirestore;
 
 

@@ -54,6 +54,7 @@ dependencies {
     implementation 'org.glassfish:javax.json:1.1.4'
     implementation 'javax.annotation:javax.annotation-api:1.3.2'
     implementation 'com.squareup.okio:okio:3.3.0'
+    implementation fileTree(dir: '/home/jonathan/Android/Sdk/platforms/android-33', include: ['*.aar', '*.jar'], exclude: [])
     testImplementation 'org.testng:testng:6.9.6'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'

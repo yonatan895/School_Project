@@ -3,6 +3,7 @@ package com.example.school_app;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
+
 public class BackportsActivity extends AppCompatActivity {
 
     @Override

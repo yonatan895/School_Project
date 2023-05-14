@@ -16,7 +16,6 @@ public class FinishedQuizActivity extends BaseActivity {
      *
      * @param savedInstanceState Save the state of the app when it is paused or stopped
      *
-     * @docauthor Jonathan
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {

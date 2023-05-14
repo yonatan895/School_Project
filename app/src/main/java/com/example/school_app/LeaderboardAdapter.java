@@ -22,9 +22,7 @@ public class LeaderboardAdapter extends RecyclerView.Adapter<LeaderboardAdapter.
         usersList = new ArrayList<>();
     }
 
-    /**
-     * @param usersList
-     */
+
     public void setUsersList(List<UserModel> usersList) {
         this.usersList = usersList;
         notifyDataSetChanged();
