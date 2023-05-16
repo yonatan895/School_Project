@@ -26,7 +26,7 @@ public class BreakReminderReceiver extends BroadcastReceiver {
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "default")
                 .setSmallIcon(R.drawable.ic_notification)
                 .setContentTitle("Time to take a break!")
-                .setContentText("You've been working for a while. Take a break and stretch your legs!")
+                .setContentText("You've been learning for a while. Take a break and stretch your legs!")
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .setAutoCancel(true);
         notificationManager.notify(0, builder.build());

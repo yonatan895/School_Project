@@ -32,6 +32,15 @@ public class Question {
         return answers;
     }
 
+    public String getCorrectAnswer(List<Answer> answers) {
+        for(Answer answer : answers) {
+            if (answer.isCorrect()) {
+                return answer.getText();
+            }
+        }
+        return "";
+    }
+
     public void setAnswers(List<Answer> answers) {
         this.answers = answers;
     }

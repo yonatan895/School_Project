@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">School_app</string>
+    <string name="app_name">Java_learning_app</string>
     <string name="introduction">Hello, and welcome to the Java Learning program!
                                 I am honored that you have decided to choose this app to learn
                                 the interesting features of the Java language.
@@ -222,9 +222,9 @@ Let’s make a simple class below!
         \nTo reduce “wiring” code, annotations such as <font color="#FF4081">@Autowired</font> and <font color="#FF4081">@Inject</font> are used by direct-injection frameworks like Spring and Google Guice, respectively.
 </string>
     <string name="total_questions">"Total Questions: "</string>
-    
 
-<string name="concise_loops">we can write <font color="#FF4001">for</font> loops concisely for an array or any class that implements <font color="#FF4081">Iterable</font> For example:</string>
+
+    <string name="concise_loops">we can write <font color="#FF4001">for</font> loops concisely for an array or any class that implements <font color="#FF4081">Iterable</font> For example:</string>
     <string name="concise_example">import static java.lang.System.out;\n
 class main {\n
     \tpublic static void main( String args[] ) {\n
@@ -241,10 +241,9 @@ class main {\n
 </string>
 
 
-
     <string name="autoboxing">The Java compiler will automatically wrap a primitive type in the corresponding object when it is necessary. For example, when assigning a variable or passing in parameters to a function:
 </string>
-    
+
     <string name="unboxing">This is simply the reverse of autoboxing. The Java compiler will unwrap an object to the corresponding primitive type when possible.
 </string>
 
@@ -296,9 +295,7 @@ You can tweak around with the above code to get a better understanding of the co
         \n• <b>Override interface methods</b>: The <font color="#FF4081">@Override</font> annotation can be used to declare we are overriding an interface method.\n</string>
 
 
-
-
-<string name="java7_pt">
+    <string name="java7_pt">
 
         \n• Diamond operator
         \n• String in switch
@@ -351,21 +348,6 @@ You can tweak around with the above code to get a better understanding of the co
         As seen above, Strings can now be used just like any other primitive data type would in a switch statement.
 
     </string>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 </resources>

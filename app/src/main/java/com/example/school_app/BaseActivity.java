@@ -84,8 +84,8 @@ public abstract class BaseActivity extends AppCompatActivity {
                     finish();
                     return true;
                 }
-            } else if (id == R.id.text_editor) {
-                startActivity(new Intent(context, QuizLauncher.class));
+            } else if (id == R.id.quiz_launch) {
+                startActivity(new Intent(context, QuizMenu.class));
                 return true;
             }
             return false;

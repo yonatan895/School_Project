@@ -10,7 +10,7 @@
         />
 
     <item
-        android:id="@+id/text_editor"
+        android:id="@+id/quiz_launch"
         android:title="Quizzes"
         android:icon="@drawable/ic_quiz"
         />

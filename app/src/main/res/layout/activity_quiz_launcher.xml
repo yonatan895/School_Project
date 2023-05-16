@@ -1,108 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/quiz_launcher_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    tools:context=".QuizLauncher"
+    >
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:elevation="0dp"
+        android:gravity="center"
+        android:layout_gravity="center"
         android:background="@color/background"
-        tools:ignore="HardcodedText"
-        tools:context=".QuizLauncher">
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/java_overview"
+            app:titleCentered="true"
+            app:title="Overview of Java"
+            app:titleTextColor="@color/text_color"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </com.google.android.material.appbar.AppBarLayout>
 
-        <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/appbarLayout"
-            app:statusBarForeground="@color/background"
-            android:background="@color/background"
-            android:fitsSystemWindows="true"
+    <com.google.android.material.card.MaterialCardView
+        style="@style/TestCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+            <TextView
+                android:textSize="20sp"
+                android:textColor="@color/text_secondary_color"
+                android:padding="25dp"
+                android:gravity="center"
+                android:id="@+id/question"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        style="@style/TestCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_gravity="center"
+            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
-            <com.google.android.material.appbar.MaterialToolbar
-                android:id="@+id/toolbar"
-                android:elevation="0dp"
-                android:background="@color/background"
-                app:titleTextColor="@color/text_color"
+            <TextView
+                android:textSize="20sp"
+                android:textColor="@color/text_secondary_color"
+                android:padding="15dp"
+                android:gravity="center"
+                android:id="@+id/ans_a"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"/>
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
-        </com.google.android.material.appbar.AppBarLayout>
-
-        <androidx.core.widget.NestedScrollView
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    <com.google.android.material.card.MaterialCardView
+        style="@style/TestCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_gravity="center"
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <LinearLayout
-                android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="20sp"
+                android:textColor="@color/text_secondary_color"
+                android:padding="15dp"
+                android:gravity="center"
+                android:id="@+id/ans_b"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/introCard"
-                    app:cardBackgroundColor="@color/card_background"
-                    app:strokeWidth="0dp"
-                    android:layout_marginEnd="25dp"
-                    android:layout_marginStart="25dp"
-                    android:layout_marginTop="25dp"
-                    app:cardCornerRadius="25dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <LinearLayout
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp">
-                        <TextView
-                            android:textStyle="bold"
-                            android:textColor="@color/text_color"
-                            android:textSize="17sp"
-                            android:text="Overview of Java"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
-                    </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/Java7_quiz_launcher"
-                    app:cardBackgroundColor="@color/card_background"
-                    app:strokeWidth="0dp"
-                    android:layout_marginEnd="25dp"
-                    android:layout_marginStart="25dp"
-                    android:layout_marginTop="25dp"
-                    app:cardCornerRadius="25dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <LinearLayout
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp">
-                        <TextView
-                            android:textStyle="bold"
-                            android:textColor="@color/text_color"
-                            android:textSize="17sp"
-                            android:text="Java 7"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            tools:ignore="HardcodedText" />
+    <com.google.android.material.card.MaterialCardView
+        style="@style/TestCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="20sp"
+                android:textColor="@color/text_secondary_color"
+                android:padding="15dp"
+                android:gravity="center"
+                android:id="@+id/ans_c"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
-                    </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
-            </LinearLayout>
-        </androidx.core.widget.NestedScrollView>
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/navigation_view"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        app:menu="@menu/navigation_menu" />
+    <com.google.android.material.card.MaterialCardView
+        style="@style/TestCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="20sp"
+                android:textColor="@color/text_secondary_color"
+                android:padding="15dp"
+                android:gravity="center"
+                android:id="@+id/ans_d"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
 
 
-
-</androidx.drawerlayout.widget.DrawerLayout>
+</LinearLayout>

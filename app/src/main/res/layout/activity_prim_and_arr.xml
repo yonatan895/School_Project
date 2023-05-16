@@ -174,15 +174,6 @@
                     android:gravity="top"
                     android:text="@string/java_com_proc"
                     android:textSize="14sp"/>
-
-                <Button
-                    android:id="@+id/next_button"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="15dp"
-                    android:gravity="top"
-                    android:text="Next"
-                    />
             </LinearLayout>
         </ScrollView>
 
