@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:ignore="HardCodedText">
+
+    <item android:id="@+id/search"
+          android:title="Search"
+          android:icon="@drawable/ic_search"
+          app:showAsAction="collapseActionView"
+        app:actionViewClass="com.google.android.material.search.SearchView" />
+
+
+</menu>

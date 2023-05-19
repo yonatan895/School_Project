@@ -16,135 +16,135 @@
         android:theme="@style/Theme.School_app"
         tools:targetApi="31">
         <activity
-            android:name=".ResultActivity"
+            android:name="com.example.activities.ResultActivity"
             android:exported="false" />
         <activity
-            android:name=".QuizLauncher"
+            android:name="com.example.activities.QuizLauncher"
             android:exported="false" />
         <activity
-            android:name=".QuizMenu"
+            android:name="com.example.activities.QuizMenu"
             android:exported="false" />
         <activity
-            android:name=".QuizActivity"
+            android:name="com.example.classes.QuizActivity"
             android:exported="false" />
 
-        <receiver android:name=".BreakReminderReceiver" />
+        <receiver android:name="com.example.break_reminder.BreakReminderReceiver" />
 
-        <service android:name=".BreakReminderService" />
+        <service android:name="com.example.break_reminder.BreakReminderService" />
 
         <activity
-            android:name=".JShellActivity"
+            android:name="com.example.course_activities.JShellActivity"
             android:exported="false" />
         <activity
-            android:name=".GroovyGparsActivity"
+            android:name="com.example.course_activities.GroovyGparsActivity"
             android:exported="false" />
         <activity
-            android:name=".STMActivity"
+            android:name="com.example.course_activities.STMActivity"
             android:exported="false" />
         <activity
-            android:name=".FuturesActivity"
+            android:name="com.example.course_activities.FuturesActivity"
             android:exported="false" />
         <activity
-            android:name=".ConcurrentActivity"
+            android:name="com.example.course_activities.ConcurrentActivity"
             android:exported="false" />
         <activity
-            android:name=".GuavaActivity"
+            android:name="com.example.course_activities.GuavaActivity"
             android:exported="false" />
         <activity
-            android:name=".HibernateActivity"
+            android:name="com.example.course_activities.HibernateActivity"
             android:exported="false" />
         <activity
-            android:name=".LogbackActivity"
+            android:name="com.example.course_activities.LogbackActivity"
             android:exported="false" />
         <activity
-            android:name=".Java12FeatureActivity"
+            android:name="com.example.course_activities.Java12FeatureActivity"
             android:exported="false" />
         <activity
-            android:name=".LocalActivity"
+            android:name="com.example.course_activities.LocalActivity"
             android:exported="false" />
         <activity
-            android:name=".ModularityActivity"
+            android:name="com.example.course_activities.ModularityActivity"
             android:exported="false" />
         <activity
-            android:name=".BackportsActivity"
+            android:name="com.example.course_activities.BackportsActivity"
             android:exported="false" />
         <activity
-            android:name=".FunctionalActivity"
+            android:name="com.example.course_activities.FunctionalActivity"
             android:exported="false" />
         <activity
-            android:name=".FeaturesActivity"
+            android:name="com.example.course_activities.FeaturesActivity"
             android:exported="false" />
         <activity
-            android:name=".GroupingActivity"
+            android:name="com.example.course_activities.GroupingActivity"
             android:exported="false" />
         <activity
-            android:name=".CollectorActivity"
+            android:name="com.example.course_activities.CollectorActivity"
             android:exported="false" />
         <activity
-            android:name=".PeekActivity"
+            android:name="com.example.course_activities.PeekActivity"
             android:exported="false" />
         <activity
-            android:name=".ParallerActivity"
+            android:name="com.example.course_activities.ParallerActivity"
             android:exported="false" />
         <activity
-            android:name=".ForEachActivity"
+            android:name="com.example.course_activities.ForEachActivity"
             android:exported="false" />
         <activity
-            android:name=".StreamsActivity"
+            android:name="com.example.course_activities.StreamsActivity"
             android:exported="false" />
         <activity
-            android:name=".DefaultsActivity"
+            android:name="com.example.course_activities.DefaultsActivity"
             android:exported="false" />
         <activity
-            android:name=".Java8_vs_Java7Activity"
+            android:name="com.example.course_activities.Java8_vs_Java7Activity"
             android:exported="false" />
         <activity
-            android:name=".LambdaExpActivity"
+            android:name="com.example.course_activities.LambdaExpActivity"
             android:exported="false" />
         <activity
-            android:name=".WhatInJava8Activity"
+            android:name="com.example.course_activities.WhatInJava8Activity"
             android:exported="false" />
         <activity
-            android:name=".JVMBenefitsActivity"
+            android:name="com.example.course_activities.JVMBenefitsActivity"
             android:exported="false" />
         <activity
-            android:name=".NewIOActivity"
+            android:name="com.example.course_activities.NewIOActivity"
             android:exported="false" />
         <activity
-            android:name=".Java7Activity"
+            android:name="com.example.course_activities.Java7Activity"
             android:exported="false" />
         <activity
-            android:name=".Java6Activity"
+            android:name="com.example.course_activities.Java6Activity"
             android:exported="false" />
         <activity
-            android:name=".Java5Activity"
+            android:name="com.example.course_activities.Java5Activity"
             android:exported="false" />
         <activity
-            android:name=".CommentsInJavaActivity"
+            android:name="com.example.course_activities.CommentsInJavaActivity"
             android:exported="false" />
         <activity
-            android:name=".ClassesInJavaActivity"
+            android:name="com.example.course_activities.ClassesInJavaActivity"
             android:exported="false" />
         <activity
-            android:name=".PrimAndArrActivity"
+            android:name="com.example.course_activities.PrimAndArrActivity"
             android:exported="false" />
         <activity
-            android:name=".TextEditorActivity"
+            android:name="com.example.activities.TextEditorActivity"
             android:exported="false" />
         <activity
-            android:name=".CourseStructureActivity"
+            android:name="com.example.course_activities.CourseStructureActivity"
             android:exported="false" />
         <activity
-            android:name=".JavaEcosystemActivity"
+            android:name="com.example.course_activities.JavaEcosystemActivity"
             android:exported="false" />
         <activity
-            android:name=".LeaderboardActivity"
+            android:name="com.example.activities.LeaderboardActivity"
             android:exported="false" />
         <activity
-            android:name=".IntroActivity"
+            android:name="com.example.course_activities.IntroActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name="com.example.activities.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -157,7 +157,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.activities.SignupActivity"
             android:exported="true" />
     </application>
 

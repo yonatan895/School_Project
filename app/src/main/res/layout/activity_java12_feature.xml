@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Java12FeatureActivity">
+    tools:context="com.example.course_activities.Java12FeatureActivity">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PrimAndArrActivity"
+    tools:context="com.example.course_activities.PrimAndArrActivity"
     tools:ignore="HardcodedText">
 
     <androidx.drawerlayout.widget.DrawerLayout
@@ -123,57 +123,6 @@
                     android:text="@string/arr_example"
                     android:textSize="14sp" />
 
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:gravity="top"
-                    android:text="Advantages over C/C++"
-                    android:textSize="17sp"
-                    android:textStyle="bold"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:gravity="top"
-                    android:text="@string/adv_over_c"
-                    android:textSize="14sp"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:gravity="top"
-                    android:text="Java packages"
-                    android:textSize="17sp"
-                    android:textStyle="bold"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:gravity="top"
-                    android:text="@string/java_packages"
-                    android:textSize="14sp"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:gravity="top"
-                    android:text="Java community process"
-                    android:textSize="17sp"
-                    android:textStyle="bold"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:gravity="top"
-                    android:text="@string/java_com_proc"
-                    android:textSize="14sp"/>
             </LinearLayout>
         </ScrollView>
 

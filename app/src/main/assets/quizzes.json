@@ -23,7 +23,7 @@
           ]
         },
         {
-          "question": "What class is used for strong text?",
+          "question": "What class is used for storing text?",
           "answers": [
             {"text":  "Character", "correct":  false},
             {"text":  "String", "correct":  true},

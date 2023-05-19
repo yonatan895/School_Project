@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Java8_vs_Java7Activity">
+    tools:context="com.example.course_activities.Java8_vs_Java7Activity">
 
 </androidx.constraintlayout.widget.ConstraintLayout>
