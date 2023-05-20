@@ -42,34 +42,6 @@ public abstract class QuizActivity extends AppCompatActivity {
     }
 
 
-    /**
-     * The displayCurrentQuestion function is responsible for displaying the current question to the user.
-     * It does this by first getting the current question from mQuestionsList, then setting that text as
-     * mQuestionTextView's text. Next, it clears all radio buttons in mAnswersRadioGroup and adds a new one for each answer option in our list of answers.
-     * <p>
-     *
-     */
-
-
-    /**
-     * The onAnswerSelected function is called when the user selects an answer.
-     * It checks if the selected answer is correct and updates the score accordingly.
-     * If there are more questions, it displays them; otherwise, it finishes the quiz.
-     *
-     */
-
-    /**
-     * The isCorrectAnswer function takes in a Question object and an integer representing the index of the selected answer.
-     * It then returns true if the selected answer is correct, or false otherwise.
-
-     *
-     * @param  question Get the answers for that question
-     * @param  selectedAnswerIndex Get the selected answer from the question
-     *
-     * @return A boolean value
-     *
-     */
-
 
 
     /**
