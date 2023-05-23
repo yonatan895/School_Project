@@ -7,9 +7,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Context;
 import android.content.Intent;
-import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.SearchView;
 
 import com.example.course_activities.BackportsActivity;
 import com.example.course_activities.ClassesInJavaActivity;
@@ -44,7 +42,7 @@ import com.example.course_activities.ModularityActivity;
 import com.example.course_activities.NewIOActivity;
 import com.example.course_activities.PeekActivity;
 import com.example.course_activities.PrimAndArrActivity;
-import com.example.activities.QuizMenu;
+import com.example.activities.QuizMenuActivity;
 import com.example.school_app.R;
 import com.example.course_activities.STMActivity;
 import com.example.course_activities.StreamsActivity;
@@ -139,7 +137,7 @@ public abstract class BaseActivity extends AppCompatActivity {
                     return true;
                 }
             } else if (id == R.id.quiz_launch) {
-                startActivity(new Intent(context, QuizMenu.class));
+                startActivity(new Intent(context, QuizMenuActivity.class));
                 return true;
             }
             return false;

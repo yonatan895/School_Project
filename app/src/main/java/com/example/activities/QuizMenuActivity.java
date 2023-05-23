@@ -12,7 +12,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 /**
  * The type Quiz launcher.
  */
-public class QuizMenu extends BaseActivity {
+public class QuizMenuActivity extends BaseActivity {
     /**
      * The Introcard.
      */
@@ -41,7 +41,7 @@ public class QuizMenu extends BaseActivity {
      */
     @Override
     public void onBackPressed() {
-        MaterialAlertDialogBuilder materialAlertDialogBuilder = new MaterialAlertDialogBuilder(QuizMenu.this);
+        MaterialAlertDialogBuilder materialAlertDialogBuilder = new MaterialAlertDialogBuilder(QuizMenuActivity.this);
         materialAlertDialogBuilder.setTitle(R.string.app_name);
         materialAlertDialogBuilder.setMessage("Are you sure you want to exit to the main app? There are plenty of quizzes for you :)");
         materialAlertDialogBuilder.setNegativeButton(android.R.string.no, (dialog, which) -> dialog.dismiss());
@@ -62,7 +62,7 @@ public class QuizMenu extends BaseActivity {
      *
      */
     public void startQuizLauncher(String quizName) {
-        Intent intent = new Intent(QuizMenu.this, QuizLauncher.class);
+        Intent intent = new Intent(QuizMenuActivity.this, QuizLauncher.class);
         intent.putExtra("quizName", quizName);
         startActivity(intent);
         finish();

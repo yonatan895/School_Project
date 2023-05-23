@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:background="@color/background"
         tools:ignore="HardcodedText"
-        tools:context="com.example.activities.QuizMenu">
+        tools:context="com.example.activities.QuizMenuActivity">
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appbarLayout"

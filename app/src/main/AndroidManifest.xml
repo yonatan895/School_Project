@@ -22,7 +22,7 @@
             android:name="com.example.activities.QuizLauncher"
             android:exported="false" />
         <activity
-            android:name="com.example.activities.QuizMenu"
+            android:name="com.example.activities.QuizMenuActivity"
             android:exported="false" />
         <activity
             android:name="com.example.classes.QuizActivity"

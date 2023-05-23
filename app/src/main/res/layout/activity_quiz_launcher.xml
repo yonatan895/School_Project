@@ -37,7 +37,7 @@
             android:layout_height="150dp">
             <TextView
                 android:textSize="20sp"
-                android:textColor="@color/white"
+                android:textColor="@color/text_secondary_color"
                 android:padding="25dp"
                 android:gravity="center"
                 android:id="@+id/question"
@@ -57,7 +57,7 @@
             android:layout_height="wrap_content">
             <TextView
                 android:textSize="20sp"
-                android:textColor="@color/white"
+                android:textColor="@color/text_secondary_color"
                 android:padding="15dp"
                 android:gravity="center"
                 android:id="@+id/ans_a"
@@ -77,7 +77,7 @@
             android:layout_height="wrap_content">
             <TextView
                 android:textSize="20sp"
-                android:textColor="@color/white"
+                android:textColor="@color/text_secondary_color"
                 android:padding="15dp"
                 android:gravity="center"
                 android:id="@+id/ans_b"
@@ -97,7 +97,7 @@
             android:layout_height="wrap_content">
             <TextView
                 android:textSize="20sp"
-                android:textColor="@color/white"
+                android:textColor="@color/text_secondary_color"
                 android:padding="15dp"
                 android:gravity="center"
                 android:id="@+id/ans_c"
@@ -117,7 +117,7 @@
             android:layout_height="wrap_content">
             <TextView
                 android:textSize="20sp"
-                android:textColor="@color/white"
+                android:textColor="@color/text_secondary_color"
                 android:padding="15dp"
                 android:gravity="center"
                 android:id="@+id/ans_d"
@@ -125,6 +125,11 @@
                 android:layout_height="match_parent"/>
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
+
+    <com.example.views.CountDownTimerView
+        android:id="@+id/countDownTimerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 
 
