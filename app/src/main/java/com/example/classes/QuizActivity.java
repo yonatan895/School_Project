@@ -6,6 +6,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import com.example.models.Answer;
 import com.example.models.Question;
 import com.example.models.Quiz;
 import com.example.models.QuizCollection;
@@ -22,6 +23,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -110,7 +113,6 @@ public abstract class QuizActivity extends AppCompatActivity {
          question.setText(questions.get(currentQuestionIndex).getQuestion());
          for (int i = 0; i < answerTextViews.length; i++) {
              answerTextViews[i].setText(questions.get(currentQuestionIndex).getAnswers().get(i).getText());
-
 
          }
 

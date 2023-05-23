@@ -23,7 +23,6 @@ public class QuizLauncher extends QuizActivity {
     private int currentQuestionIndex = 0;
     ArrayList<Question> questions;
 
-    final int QUESTIONS_LENGTH = 6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +54,11 @@ public class QuizLauncher extends QuizActivity {
      */
     void setAnswerClickListeners() {
         for (TextView answer : answerTextViews) {
+            // Disable all answer TextViews
             answer.setOnClickListener(v -> {
+                for (TextView ans: answerTextViews) {
+                    ans.setClickable(false);
+                }
                 Question questionRef = questions.get(currentQuestionIndex);
                 if (questionRef.getCorrectAnswer(questionRef.getAnswers()).contentEquals(answer.getText())) {
                     correct++;
@@ -64,12 +67,18 @@ public class QuizLauncher extends QuizActivity {
                     answer.setBackgroundResource(R.color.red);
                     answer.setTextColor(getResources().getColor(R.color.white));
                 }
+
+                // Adding a 500ms delay after answering the question, before moving to the next
                 Handler handler = new Handler();
                 handler.postDelayed(() -> {
                     answer.setBackgroundResource(R.color.white);
                     answer.setTextColor(getResources().getColor(R.color.text_secondary_color));
-                    currentQuestionIndex++;
                     moveToNextQuestion(currentQuestionIndex);
+                    currentQuestionIndex++;
+                    // Re-enable all TextViews
+                    for (TextView ans: answerTextViews) {
+                        ans.setClickable(true);
+                    }
                 }, 500);
             });
         }
