@@ -19,6 +19,7 @@ import com.example.course_activities.CourseStructureActivity;
 import com.example.course_activities.DefaultsActivity;
 import com.example.course_activities.FeaturesActivity;
 import com.example.course_activities.ForEachActivity;
+import com.example.course_activities.ForkActivity;
 import com.example.course_activities.FunctionalActivity;
 import com.example.course_activities.FuturesActivity;
 import com.example.course_activities.GroovyGparsActivity;
@@ -66,7 +67,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     ActionBarDrawerToggle actionBarDrawerToggle;
     // List of course activities
-    public static final Class<?>[] activityList = {IntroActivity.class, JavaEcosystemActivity.class, CourseStructureActivity.class, PrimAndArrActivity.class, ClassesInJavaActivity.class, CommentsInJavaActivity.class, Java5Activity.class, Java6Activity.class, Java7Activity.class, NewIOActivity.class, JVMBenefitsActivity.class, WhatInJava8Activity.class, LambdaExpActivity.class, Java8_vs_Java7Activity.class, DefaultsActivity.class, StreamsActivity.class, ForEachActivity.class, PeekActivity.class, CollectorActivity.class, GroupingActivity.class, FeaturesActivity.class, FunctionalActivity.class, BackportsActivity.class, ModularityActivity.class, JShellActivity.class, LocalActivity.class, Java12FeatureActivity.class, LogbackActivity.class, HibernateActivity.class, GuavaActivity.class, ConcurrentActivity.class, FuturesActivity.class, STMActivity.class, GroovyGparsActivity.class};
+    public static final Class<?>[] activityList = {IntroActivity.class, JavaEcosystemActivity.class, CourseStructureActivity.class, PrimAndArrActivity.class, ClassesInJavaActivity.class, CommentsInJavaActivity.class, Java5Activity.class, Java6Activity.class, Java7Activity.class, ForkActivity.class, NewIOActivity.class, JVMBenefitsActivity.class, WhatInJava8Activity.class, LambdaExpActivity.class, Java8_vs_Java7Activity.class, DefaultsActivity.class, StreamsActivity.class, ForEachActivity.class, PeekActivity.class, CollectorActivity.class, GroupingActivity.class, FeaturesActivity.class, FunctionalActivity.class, BackportsActivity.class, ModularityActivity.class, JShellActivity.class, LocalActivity.class, Java12FeatureActivity.class, LogbackActivity.class, HibernateActivity.class, GuavaActivity.class, ConcurrentActivity.class, FuturesActivity.class, STMActivity.class, GroovyGparsActivity.class};
 
 
     /**

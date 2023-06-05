@@ -144,7 +144,6 @@
                     android:textSize="17sp"
                     android:textStyle="bold"/>
 
-
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -154,7 +153,7 @@
                     android:textSize="14sp"/>
 
                 <com.pddstudio.highlightjs.HighlightJsView
-                    android:id="@+id/auto_res"
+                    android:id="@+id/auto_res_management"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     />
@@ -164,16 +163,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:gravity="top"
-                    android:text="Unboxing"
-                    android:textStyle="bold"
-                    android:textSize="15sp"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:gravity="top"
-                    android:text="@string/unboxing"
+                    android:text="As seen in the code above, there is no need to close the streams as they are taken care of automatically."
                     android:textSize="14sp"/>
 
                 <TextView
@@ -181,20 +171,20 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:gravity="top"
-                    android:textStyle="bold"
-                    android:text="Enums"
-                    android:textSize="15sp"/>
+                    android:text="Improved exception handling"
+                    android:textSize="17sp"
+                    android:textStyle="bold"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:gravity="top"
-                    android:text="The enum keyword creates a typesafe and ordered list of values. For example:"
+                    android:text="@string/improved_ex_handle"
                     android:textSize="14sp"/>
 
                 <com.pddstudio.highlightjs.HighlightJsView
-                    android:id="@+id/enums"
+                    android:id="@+id/improved_exc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     />
@@ -204,9 +194,17 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:gravity="top"
-                    android:text="Varargs"
-                    android:textStyle="bold"
-                    android:textSize="15sp"/>
+                    android:text="@string/improved_ex_exp"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="top"
+                    android:text="Numbers with underscores"
+                    android:textSize="17sp"
+                    android:textStyle="bold"/>
 
 
                 <TextView
@@ -214,27 +212,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:gravity="top"
-                    android:text="@string/var_args"
+                    android:text="@string/num_in_under"
                     android:textSize="14sp"/>
 
                 <com.pddstudio.highlightjs.HighlightJsView
-                    android:id="@+id/var_args"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    />
-
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:gravity="top"
-                    android:text="Putting it all together, we have the following code:"
-                    android:textSize="14sp"/>
-
-
-                <com.pddstudio.highlightjs.HighlightJsView
-                    android:id="@+id/enum_example"
+                    android:id="@+id/num_in_under_exa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     />
@@ -244,25 +226,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:gravity="top"
-                    android:text="@string/print_spaced_example"
+                    android:text="@string/num_in_under_exp"
                     android:textSize="14sp"/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

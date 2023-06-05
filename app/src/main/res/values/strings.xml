@@ -345,7 +345,62 @@ You can tweak around with the above code to get a better understanding of the co
 </string>
 
     <string name="auto_res_management">
-        As seen above, Strings can now be used just like any other primitive data type would in a switch statement.
+        The new automatic resource management feature makes dealing with resources much easier, such as files. Before Java 7, we needed to explicitly close all open streams, causing some very verbose code. Now we can do the following:
+
+
+
+    </string>
+
+    <string name="auto_res_example">
+
+        public void writeWithTry(){\n
+     \n\ttry (FileOutputStream fos = new FileOutputStream("books.txt");\n
+                \n\t\tDataOutputStream dos = new DataOutputStream(fos)) {\n
+            \n\t\tdos.writeUTF("Modern Java");}\n
+     \tcatch (IOException e) {\n
+         \t// log the exception\n
+     }\n
+}\n
+    </string>
+
+    <string name="improved_ex_handle">
+        Improved exception handling in Java 7 means that we can catch more than one exception in one catch statement. Previously, we had to write a different catch block for each exception. This may seem trivial but will make Java development somewhat easier. Here’s an example of the new style:
+    </string>
+
+    <string name="improved_ex_example">
+        public static Integer fetchURLAsInteger(String urlString){\n
+    \ttry {\n
+          \t\tURL url = new URL(urlString);\n
+          \t\tString str = url.openConnection().getContent().toString();\n
+          \t\treturn Integer.parseInt(str);\n
+
+    }\tcatch (NullPointerException | NumberFormatException | IOException e) {\n
+          \t\treturn null;\n
+    } \n
+}
+    </string>
+
+    <string name="improved_ex_exp">
+        The above code would fetch content from the given URL and attempt to convert it to an integer. If anything goes wrong, it returns null. Although this is a contrived example, similar situations do occur in real code.
+    </string>
+
+    <string name="num_in_under">
+        Numbers with underscores are exactly what you think. Humans have difficulty reading long streams of numbers, so Java 7 allows us to put underscores in numeric literals to make them easier to understand. For example, three million would be written as follows:
+    </string>
+
+    <string name="num_in_under_exa">
+        class HelloWorld {\n
+    \tpublic static void main( String args[] ) {\n
+        \t\tint lemmings = 3_000_000;\n
+        \t\tSystem.out.println(lemmings);\n
+    }\n
+        }
+
+    </string>
+
+    <string name="num_in_under_exp">
+        The above code outputs  “<font color="#FF4081">3000000</font>”, showing that underscores in numbers are ignored while parsing in Java.
+
 
     </string>
 
