@@ -62,6 +62,13 @@ public class SearchActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * The filterList function is used to filter the list of courses based on user input.
+     *
+     * @param  text Filter the list of courses
+     *
+     *
+     */
     private void filterList(String text) {
         adapter.clear();
         if (TextUtils.isEmpty(text)) {
@@ -78,6 +85,13 @@ public class SearchActivity extends AppCompatActivity {
 
 
 
+    /**
+     * The getAllCourseNames function returns an ArrayList of Strings containing the names of all
+     * courses in the course list.
+     *
+     * @return An arraylist of course names
+     *
+     */
     private ArrayList<String> getAllCourseNames() {
         ArrayList<String> courseNames = new ArrayList<>();
         for (Class<?> activityClass : activityList) {
@@ -87,6 +101,12 @@ public class SearchActivity extends AppCompatActivity {
         return courseNames;
     }
 
+    /**
+     * The createCourseMap function creates a HashMap of course names and their corresponding activity classes.
+     *
+     * @return A hashmap with the course name as a key and the activity class as a value
+     *
+     */
     private HashMap<String, Class<?>> createCourseMap() {
         HashMap<String, Class<?>> map = new HashMap<>();
         for (Class<?> activityClass : activityList) {
