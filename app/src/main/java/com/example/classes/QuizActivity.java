@@ -78,6 +78,14 @@ public abstract class QuizActivity extends AppCompatActivity {
 
 
 
+    /**
+     * The updateScore function updates the user's score in the database.
+     *
+     *
+     * @param correctAnswers Update the totalcorrectanswers field in the database
+     *
+     *
+     */
     protected void updateScore(int correctAnswers) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();

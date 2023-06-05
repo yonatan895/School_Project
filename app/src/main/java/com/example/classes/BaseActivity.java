@@ -68,15 +68,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     ActionBarDrawerToggle actionBarDrawerToggle;
     // List of course activities
     private static final Class<?>[] activityList = {IntroActivity.class, JavaEcosystemActivity.class, CourseStructureActivity.class, PrimAndArrActivity.class, ClassesInJavaActivity.class, CommentsInJavaActivity.class, Java5Activity.class, Java6Activity.class, Java7Activity.class, NewIOActivity.class, JVMBenefitsActivity.class, WhatInJava8Activity.class, LambdaExpActivity.class, Java8_vs_Java7Activity.class, DefaultsActivity.class, StreamsActivity.class, ForEachActivity.class, PeekActivity.class, CollectorActivity.class, GroupingActivity.class, FeaturesActivity.class, FunctionalActivity.class, BackportsActivity.class, ModularityActivity.class, JShellActivity.class, LocalActivity.class, Java12FeatureActivity.class, LogbackActivity.class, HibernateActivity.class, GuavaActivity.class, ConcurrentActivity.class, FuturesActivity.class, STMActivity.class, GroovyGparsActivity.class};
-    private static final Map<String, Class<?>> activityMap;
-
-    static {
-        activityMap = new HashMap<>();
-        for (Class<?> activityClass : activityList) {
-            String activityName = activityClass.getSimpleName().replace("Activity", "");
-            activityMap.put(activityName, activityClass);
-        }
-    }
 
 
     /**
