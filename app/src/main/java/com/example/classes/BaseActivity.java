@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.view.MenuItem;
 
+import com.example.activities.SearchActivity;
 import com.example.course_activities.BackportsActivity;
 import com.example.course_activities.ClassesInJavaActivity;
 import com.example.course_activities.CollectorActivity;
@@ -55,8 +56,6 @@ import com.pddstudio.highlightjs.models.Language;
 import com.pddstudio.highlightjs.models.Theme;
 
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 
 
@@ -67,7 +66,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     ActionBarDrawerToggle actionBarDrawerToggle;
     // List of course activities
-    private static final Class<?>[] activityList = {IntroActivity.class, JavaEcosystemActivity.class, CourseStructureActivity.class, PrimAndArrActivity.class, ClassesInJavaActivity.class, CommentsInJavaActivity.class, Java5Activity.class, Java6Activity.class, Java7Activity.class, NewIOActivity.class, JVMBenefitsActivity.class, WhatInJava8Activity.class, LambdaExpActivity.class, Java8_vs_Java7Activity.class, DefaultsActivity.class, StreamsActivity.class, ForEachActivity.class, PeekActivity.class, CollectorActivity.class, GroupingActivity.class, FeaturesActivity.class, FunctionalActivity.class, BackportsActivity.class, ModularityActivity.class, JShellActivity.class, LocalActivity.class, Java12FeatureActivity.class, LogbackActivity.class, HibernateActivity.class, GuavaActivity.class, ConcurrentActivity.class, FuturesActivity.class, STMActivity.class, GroovyGparsActivity.class};
+    public static final Class<?>[] activityList = {IntroActivity.class, JavaEcosystemActivity.class, CourseStructureActivity.class, PrimAndArrActivity.class, ClassesInJavaActivity.class, CommentsInJavaActivity.class, Java5Activity.class, Java6Activity.class, Java7Activity.class, NewIOActivity.class, JVMBenefitsActivity.class, WhatInJava8Activity.class, LambdaExpActivity.class, Java8_vs_Java7Activity.class, DefaultsActivity.class, StreamsActivity.class, ForEachActivity.class, PeekActivity.class, CollectorActivity.class, GroupingActivity.class, FeaturesActivity.class, FunctionalActivity.class, BackportsActivity.class, ModularityActivity.class, JShellActivity.class, LocalActivity.class, Java12FeatureActivity.class, LogbackActivity.class, HibernateActivity.class, GuavaActivity.class, ConcurrentActivity.class, FuturesActivity.class, STMActivity.class, GroovyGparsActivity.class};
 
 
     /**
@@ -97,7 +96,10 @@ public abstract class BaseActivity extends AppCompatActivity {
             } else if (id == R.id.nav_leaderboard) {
                 startActivity(new Intent(context, LeaderboardActivity.class));
                 return true;
+            } else if (id == R.id.nav_search) {
+                startActivity( new Intent(context, SearchActivity.class));
             }
+
             return false;
         });
     }

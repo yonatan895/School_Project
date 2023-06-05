@@ -4,6 +4,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:ignore="HardcodedText">
     <group android:checkableBehavior="single">
+
+
+    <item
+        android:id="@+id/nav_search"
+        android:title="Search courses"
+        android:icon="@drawable/ic_search"
+        />
+
     <item
         android:id="@+id/nav_home"
         android:title="Home"
