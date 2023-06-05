@@ -96,6 +96,7 @@ public class SearchActivity extends AppCompatActivity {
         ArrayList<String> courseNames = new ArrayList<>();
         for (Class<?> activityClass : activityList) {
             String courseName = activityClass.getSimpleName();
+            courseName = courseName.replace("Activity", "");
             courseNames.add(courseName);
         }
         return courseNames;
