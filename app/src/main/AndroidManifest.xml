@@ -16,6 +16,9 @@
         android:theme="@style/Theme.School_app"
         tools:targetApi="31">
         <activity
+            android:name="com.example.activities.SearchActivity"
+            android:exported="false" />
+        <activity
             android:name="com.example.activities.ResultActivity"
             android:exported="false" />
         <activity
