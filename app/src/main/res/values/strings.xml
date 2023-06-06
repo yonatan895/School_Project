@@ -454,9 +454,50 @@ You can tweak around with the above code to get a better understanding of the co
 
 
     <string name="recur_exp">
+        The compute method has to be overridden with the actual task to be performed. In the above case, it iterates through the elements of the array and returns the computed sum.
+
+        We create a <font color="#FF4081">RecursiveTask</font> for dividing the array into two parts and assign each part to another <font color="#FF4081">RecursiveTask</font> for further dividing. We continue dividing the array and stop dividing when the array has less than 20 elements.
+    </string>
 
 
+    <string name="fork_exa_code2">
+        import java.util.ArrayList;\n
+        import java.util.Arrays;\n
+        import java.util.List;\n
+        import java.util.concurrent.RecursiveTask;\n
 
+        \nclass NumberDividerTask extends RecursiveTask&lt;Integer&gt; {\n
+            \tint[] numbers;\n
+
+            \n\tNumberDividerTask(int[] numbers) {\n
+            \t\tthis.numbers = numbers;\n
+    \t}\n
+
+        \n\t@Override\n
+        \tprotected Integer compute() {\n
+            \t\tint sum = 0;\n
+            \t\tList&lt;RecursiveTask&lt;Integer&gt;&gt; forks = new ArrayList&lt;&gt;();\n
+            \t\tif (numbers.length > 20) {\n
+                \t\t\tNumberDividerTask task1 = new NumberDividerTask(Arrays.copyOfRange(\n
+                        \t\t\tnumbers, 0, numbers.length / 2));\n
+                \t\tNumberDividerTask task2 = new NumberDividerTask(Arrays.copyOfRange(\n
+                        \t\t\tnumbers, numbers.length / 2, numbers.length));\n
+                \t\tforks.add(task1);\n
+                \t\tforks.add(task2);\n
+                \t\ttask1.fork();\n
+                \t\ttask2.fork();\n
+            \t\t} else {\n
+                \t\t\tSumCalculatorTask sumCalculatorTask = new SumCalculatorTask(numbers);\n
+                \t\t\tforks.add(sumCalculatorTask);\n
+                \t\t\tsumCalculatorTask.fork();\n
+        \t\t}\n
+            \t\t// Combine the result from all the tasks\n
+            \t\tfor (RecursiveTask&lt;Integer&gt; task : forks) {\n
+                \t\t\tsum += task.join();\n
+        \t}\n
+            \t\treturn sum;\n
+    \t}\n
+}\n
 
     </string>
 

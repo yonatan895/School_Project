@@ -113,6 +113,20 @@
                     android:layout_height="wrap_content"
                     />
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="top"
+                    android:text="@string/recur_exp"
+                    android:textSize="14sp"/>
+
+                <com.pddstudio.highlightjs.HighlightJsView
+                    android:id="@+id/fork_code2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
 
 
 
