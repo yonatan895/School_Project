@@ -1,5 +1,6 @@
 package com.example.activities;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -10,24 +11,58 @@ import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Toast;
 
-import com.example.classes.BaseActivity;
+import com.example.course_activities.BackportsActivity;
+import com.example.course_activities.ClassesInJavaActivity;
+import com.example.course_activities.CollectorActivity;
+import com.example.course_activities.CommentsInJavaActivity;
+import com.example.course_activities.ConcurrentActivity;
+import com.example.course_activities.CourseStructureActivity;
+import com.example.course_activities.DefaultsActivity;
+import com.example.course_activities.FeaturesActivity;
+import com.example.course_activities.ForEachActivity;
+import com.example.course_activities.ForkActivity;
+import com.example.course_activities.FunctionalActivity;
+import com.example.course_activities.FuturesActivity;
+import com.example.course_activities.GroovyGparsActivity;
+import com.example.course_activities.GroupingActivity;
+import com.example.course_activities.GuavaActivity;
+import com.example.course_activities.HibernateActivity;
+import com.example.course_activities.IntroActivity;
+import com.example.course_activities.JShellActivity;
+import com.example.course_activities.JVMBenefitsActivity;
+import com.example.course_activities.Java12FeatureActivity;
+import com.example.course_activities.Java5Activity;
+import com.example.course_activities.Java6Activity;
+import com.example.course_activities.Java7Activity;
+import com.example.course_activities.Java8_vs_Java7Activity;
+import com.example.course_activities.JavaEcosystemActivity;
+import com.example.course_activities.LambdaExpActivity;
+import com.example.course_activities.LocalActivity;
+import com.example.course_activities.LogbackActivity;
+import com.example.course_activities.ModularityActivity;
+import com.example.course_activities.NewIOActivity;
+import com.example.course_activities.PeekActivity;
+import com.example.course_activities.PrimAndArrActivity;
+import com.example.course_activities.STMActivity;
+import com.example.course_activities.StreamsActivity;
+import com.example.course_activities.WhatInJava8Activity;
 import com.example.school_app.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 public class SearchActivity extends AppCompatActivity {
     private ArrayAdapter<String> adapter;
     private HashMap<String, Class<?>> courseMap;
 
-    private static final Class<?>[] activityList = BaseActivity.activityList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
-        courseMap = createCourseMap();
+        courseMap = createActivityMap();
 
         SearchView searchView = findViewById(R.id.search_view);
         ListView listView = findViewById(R.id.list_view);
@@ -52,9 +87,8 @@ public class SearchActivity extends AppCompatActivity {
             String courseName = adapter.getItem(position);
             Class<?> activityClass = courseMap.get(courseName);
 
-            if(activityClass != null) {
-                Intent intent = new Intent(SearchActivity.this, activityClass);
-                startActivity(intent);
+            if (activityClass != null) {
+                startActivity(new Intent(SearchActivity.this, activityClass));
             } else {
                 Toast.makeText(SearchActivity.this, "Course not found", Toast.LENGTH_SHORT).show();
             }
@@ -65,9 +99,7 @@ public class SearchActivity extends AppCompatActivity {
     /**
      * The filterList function is used to filter the list of courses based on user input.
      *
-     * @param  text Filter the list of courses
-     *
-     *
+     * @param text Filter the list of courses
      */
     private void filterList(String text) {
         adapter.clear();
@@ -84,36 +116,67 @@ public class SearchActivity extends AppCompatActivity {
     }
 
 
-
     /**
      * The getAllCourseNames function returns an ArrayList of Strings containing the names of all
      * courses in the course list.
      *
      * @return An arraylist of course names
-     *
      */
     private ArrayList<String> getAllCourseNames() {
         ArrayList<String> courseNames = new ArrayList<>();
-        for (Class<?> activityClass : activityList) {
-            String courseName = activityClass.getSimpleName();
+        for (Map.Entry<String, Class<?>> entry : courseMap.entrySet()) {
+            String courseName = entry.getKey();
             courseName = courseName.replace("Activity", "");
             courseNames.add(courseName);
         }
         return courseNames;
     }
 
+
     /**
-     * The createCourseMap function creates a HashMap of course names and their corresponding activity classes.
+     * Creates a map of activity names to activity classes.
      *
-     * @return A hashmap with the course name as a key and the activity class as a value
-     *
+     * @return The map of activity names to activity classes
      */
-    private HashMap<String, Class<?>> createCourseMap() {
+    @NonNull
+    private HashMap<String, Class<?>> createActivityMap() {
         HashMap<String, Class<?>> map = new HashMap<>();
-        for (Class<?> activityClass : activityList) {
-            String courseName = activityClass.getSimpleName();
-            map.put(courseName, activityClass);
-        }
+        map.put("Introduction to Java", IntroActivity.class);
+        map.put("Java Ecosystem", JavaEcosystemActivity.class);
+        map.put("Course Structure", CourseStructureActivity.class);
+        map.put("Primitive Types and Arrays", PrimAndArrActivity.class);
+        map.put("Classes in Java", ClassesInJavaActivity.class);
+        map.put("Comments in Java", CommentsInJavaActivity.class);
+        map.put("Java 5 Features", Java5Activity.class);
+        map.put("Java 6 Features", Java6Activity.class);
+        map.put("Java 7 Features", Java7Activity.class);
+        map.put("Fork/Join Framework", ForkActivity.class);
+        map.put("New I/O", NewIOActivity.class);
+        map.put("JVM Benefits", JVMBenefitsActivity.class);
+        map.put("What's New in Java 8", WhatInJava8Activity.class);
+        map.put("Lambda Expressions", LambdaExpActivity.class);
+        map.put("Java 8 vs Java 7", Java8_vs_Java7Activity.class);
+        map.put("Default Methods", DefaultsActivity.class);
+        map.put("Streams", StreamsActivity.class);
+        map.put("ForEach Method", ForEachActivity.class);
+        map.put("Peek Method", PeekActivity.class);
+        map.put("Collectors", CollectorActivity.class);
+        map.put("Grouping", GroupingActivity.class);
+        map.put("New Features in Java 9-16", FeaturesActivity.class);
+        map.put("Functional Programming", FunctionalActivity.class);
+        map.put("Backports", BackportsActivity.class);
+        map.put("Modularity", ModularityActivity.class);
+        map.put("JShell", JShellActivity.class);
+        map.put("Local Variable Type Inference", LocalActivity.class);
+        map.put("Java 12 Features", Java12FeatureActivity.class);
+        map.put("Logback", LogbackActivity.class);
+        map.put("Hibernate", HibernateActivity.class);
+        map.put("Guava", GuavaActivity.class);
+        map.put("Concurrency", ConcurrentActivity.class);
+        map.put("Futures", FuturesActivity.class);
+        map.put("Software Transactional Memory", STMActivity.class);
+        map.put("Groovy and GPars", GroovyGparsActivity.class);
         return map;
     }
+
 }
