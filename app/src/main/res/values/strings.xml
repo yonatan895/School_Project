@@ -400,9 +400,67 @@ You can tweak around with the above code to get a better understanding of the co
 
     <string name="num_in_under_exp">
         The above code outputs  “<font color="#FF4081">3000000</font>”, showing that underscores in numbers are ignored while parsing in Java.
+    </string>
+
+    <string name="fork_pt_cover">
+        • Fork/Join framework\n
+        • Examples\n
+    </string>
+
+
+    <string name="fork_exp">
+        There are new Java concurrency APIs (JSR 166y) referred to as the <b> Fork-join</b> framework. It is designed for tasks that can be broken down and takes advantage of multiple processors. The following are the core classes (all located in <font color="#FF4081">java.util.concurrent</font>):
+    </string>
+
+    <string name="fork_pt">
+        • <font color="#FF4081">ForkJoinPool</font>: An ExecutorService for running ForkJoinTasks and managing and monitoring the tasks.\n
+        • <font color="#FF4081">ForkJoinTask</font>: This represents the abstract task that runs within the ForkJoinPool\n
+        • <font color="#FF4081">RecursiveTask</font>: This is a subclass of ForkJoinTask whose compute method returns some value.\n
+        • <font color="#FF4081">RecursiveAction</font>: This is a subclass of ForkJoinTask whose compute method does not return any value.\n
+
+    </string>
+
+    <string name="fork_exa">
+        As an example of using this framework, let’s find the sum of 2,000 integers. This is a trivial example but will hopefully demonstrate proper use of the ForkJoin framework.\n
+
+        \nIn this example, we will divide the array of integers in half and assign each half to a <font color="#FF4081">RecursiveTask</font>. If the array size is less than 20 elements, we assign it to another <font color="#FF4081">RecursiveTask</font> that computes the sum of the array.\n
+
+        \nHere is the <font color="#FF4081">RecursiveTask</font> for computing the sum:\n
+
+    </string>
+
+    <string name="fork_exa_code1">
+
+        import java.util.concurrent.RecursiveTask;\n
+
+        \nclass SumCalculatorTask extends RecursiveTask&lt;Integer&gt; {\n
+            \tint [] numbers;\n
+        \tSumCalculatorTask(int[] numbers) {\n
+            \t\tthis.numbers = numbers;\n
+    }\n
+
+        \t\n@Override\n
+        protected Integer compute() {\n
+            \tint sum = 0;\n
+            \tfor (int i : numbers) {\n
+                \t\tsum += i;\n
+            }
+            \treturn sum;\n
+    }\n
+}
 
 
     </string>
+
+
+    <string name="recur_exp">
+
+
+
+
+    </string>
+
+
 
 
 </resources>
